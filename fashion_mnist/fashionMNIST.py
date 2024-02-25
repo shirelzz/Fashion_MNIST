@@ -1,5 +1,4 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-import tensorflow as tf
 # import matplotlib.pyplot as plt
 import importlib
 import pandas as pd
@@ -12,8 +11,8 @@ from sklearn.model_selection import train_test_split
 # from tensorflow import keras
 
 import tensorflow as tf
-from tensorflow.keras import layers, models
-
+# from tensorflow.keras import layers, models
+layers, models = tf.keras.layers, tf.keras.models
 
 importlib.reload(utils)
 
@@ -38,7 +37,7 @@ def get_data():
     return df_shuffled
 
 
-def split_data(df_shuffled):
+def split_data0(df_shuffled):
     X = df_shuffled.drop('label', axis=1)
     y = df_shuffled['label']
     X_train_, X_test, y_train_, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
@@ -49,3 +48,18 @@ def split_data(df_shuffled):
     X_test = X_test / 255.0
     X_validation = X_validation / 255.0
     return X_train, y_train, X_test, y_test, X_validation, y_validation
+
+
+def split_data1(df_shuffled):
+    X = df_shuffled.drop('label', axis=1)
+    y = df_shuffled['label']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, random_state=42)
+
+    # To transform the images to be in scale from 0-1
+    X_train = X_train / 255.0
+    X_test = X_test / 255.0
+    # X_validation = X_validation / 255.0
+    # , X_validation, y_validation)
+
+    return X_train, y_train, X_test, y_test
+

@@ -2,12 +2,21 @@ from modelUtils import *
 from fashionMNIST import *
 from softMax import *
 from RNN import *
+from CNN import *
 from sklearn.neighbors import KNeighborsClassifier
 
 
 def main():
     df_shuffled = get_data()
-    X_train, y_train, X_test, y_test, X_validation, y_validation = split_data(df_shuffled)
+
+    # For RNN
+    X_train0, y_train0, X_test0, y_test0, X_validation0, y_validation0 = split_data0(df_shuffled)
+
+    # For SoftMax, CNN
+    X_train1, y_train1, X_test1, y_test1 = split_data1(df_shuffled)
+
+    num_classes = len(np.unique(y_train1))  # Number of unique classes
+
     best_k = 5
     # best_k = find_best_k_for_KNN(X_train, y_train, X_test, y_test)
 
@@ -35,14 +44,18 @@ def main():
     # print("GaussianNB model:")
     # train_text_results_modules(gnb, X_train, y_train, X_test, y_test)
 
-    print("SoftMax model:")
-    # train_softmax_regression(X_train, y_train, X_test, y_test)
-    num_classes = len(np.unique(y_train))  # Number of unique classes
+    # Perform training for softmax model
 
-    # Perform training for softmax model with hidden layers
-    softmax_model = train_softmax_model(X_train, y_train, X_test, y_test, num_classes)
-    evaluate_model(softmax_model, X_test, y_test)
+    # print("SoftMax model:")
+    # softmax_model = train_softmax_model(X_train1, y_train1, X_test1, y_test1, num_classes)
+    # evaluate_model(softmax_model, X_test1, y_test1)
 
+    # Perform training for CNN model
+    print("CNN model:")
+    cnn_model = train_cnn_model(X_train1, y_train1, X_test1, y_test1, num_classes)
+    evaluate_model1(cnn_model, X_test1, y_test1)
+
+    # Perform training for RNN model
     # print("RNN model:")
     # (X_train, X_validation, y_train, y_validation) = split_validation(X_train_=X_train, y_train_=y_train)
     # neural_network(X_train, y_train, X_validation, y_validation, X_test, y_test)

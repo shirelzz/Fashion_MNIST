@@ -21,6 +21,16 @@ def evaluate_model(model, X_test, y_test):
     print(classification_report(y_test, y_pred_classes))
 
 
+def evaluate_model1(model, X_test, y_test):
+    # Reshape the input data for CNN
+    X_test = np.array(X_test).reshape(-1, 28, 28, 1)
+
+    # Evaluate the model
+    loss, accuracy = model.evaluate(X_test, y_test)
+    print("Test Loss:", loss)
+    print("Test Accuracy:", accuracy)
+
+
 def train_text_results_modules(model, X_train, y_train, X_test, y_test):
     model.fit(X_train, y_train)
     y_predict = model.predict(X_test)
