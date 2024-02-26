@@ -50,7 +50,7 @@ def train_text_results_modules(model, X_train, y_train, X_test, y_test):
 
 
 def find_best_k_for_KNN(X_train, y_train, X_test, y_test):
-    k_range = range(1, 50)
+    k_range = range(0, 50, 5)
     scores = []
     for k in k_range:
         print(k)
