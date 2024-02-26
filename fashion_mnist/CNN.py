@@ -1,4 +1,6 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
 import tensorflow as tf
 # from tensorflow.keras import layers, models
 layers, models = tf.keras.layers, tf.keras.models
@@ -32,8 +34,11 @@ def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
                   metrics=['accuracy'])
 
     # Train the model
-    model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
-
+    model_history = model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+    pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+    plt.grid(True)
+    plt.gca().set_ylim(0, 1)
+    plt.show()
     return model
 
 

@@ -56,9 +56,9 @@ def main():
     evaluate_model1(cnn_model, X_test1, y_test1)
 
     # Perform training for RNN model
-    # print("RNN model:")
+    print("RNN model:")
     # (X_train, X_validation, y_train, y_validation) = split_validation(X_train_=X_train, y_train_=y_train)
-    # neural_network(X_train, y_train, X_validation, y_validation, X_test, y_test)
+    neural_network(X_train0, y_train0, X_validation0, y_validation0, X_test0, y_test0)
 
 
 main()

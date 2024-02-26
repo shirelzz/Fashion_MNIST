@@ -19,12 +19,11 @@ def neural_network(X_train, y_train, X_validation, y_validation, X_test, y_test)
 
     # model.add(keras.layers.Dense(500, activation="relu")) # 1st hidden layer, 300=no. of neurons, relu=activation function
 
-    model.add \
-        (layers.Dense(300, activation="relu"))  # 1st hidden layer, 300=no. of neurons, relu=activation function
-    model.add(layers.Dense(100 ,activation="relu"))  # 2nd hidden layer
-    # model.add(keras.layers.Dense(50,activation="relu")) # 2nd hidden layer
-    model.add(layers.Dense(10 ,activation="sigmoid"))  # output layer, categories=10
-    # relu = 0 for all negative numbers or relu = output for the positive numbers
+    # model.add(keras.layers.Dense(500, activation="relu")) # 1st hidden layer, 300=no. of neurons, relu=activation function
+    model.add(layers.Dense(300, activation="relu")) # 1st hidden layer, 300=no. of neurons, relu=activation function
+    model.add(layers.Dense(100,activation="relu")) # 2nd hidden layer
+    model.add(layers.Dense(50,activation="relu")) # 3nd hidden layer
+    model.add(layers.Dense(10,activation="sigmoid")) # output layer, categories=10
 
     model.compile(optimizer='adam',
                   loss='sparse_categorical_crossentropy',
@@ -39,7 +38,7 @@ def neural_network(X_train, y_train, X_validation, y_validation, X_test, y_test)
     X_train_shaped = X_train.values.reshape(-1, 28, 28)
     X_validation_shaped = X_validation.values.reshape(-1, 28, 28)
     X_test_shaped = X_test.values.reshape(-1, 28, 28)
-    model_history = model.fit(X_train_shaped, y_train, epochs=50, validation_data=(X_validation_shaped, y_validation))
+    model_history = model.fit(X_train_shaped, y_train, epochs=50, batch_size=32, validation_data=(X_validation_shaped, y_validation))
     print("model_history.params", model_history.params)
     print("model_history.history", model_history.history)
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
