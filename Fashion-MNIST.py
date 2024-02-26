@@ -74,6 +74,8 @@ def find_best_k_for_KNN(X_train, y_train, X_test, y_test):
 
 def split_validation(X_train_, y_train_):
     X_train, X_validation, y_train, y_validation = train_test_split(X_train_, y_train_, test_size=0.1, random_state=42)
+    # X_validation = X_validation / 255.0
+
     return (X_train, X_validation, y_train, y_validation)
 
 def train_text_results_modules(model, X_train, y_train, X_test, y_test):
@@ -101,16 +103,16 @@ def neural_network(X_train, y_train, X_validation, y_validation, X_test, y_test)
     # model.add(keras.layers.Dense(500, activation="relu")) # 1st hidden layer, 300=no. of neurons, relu=activation function
     model.add(keras.layers.Dense(300, activation="relu")) # 1st hidden layer, 300=no. of neurons, relu=activation function
     model.add(keras.layers.Dense(100,activation="relu")) # 2nd hidden layer
-    # model.add(keras.layers.Dense(50,activation="relu")) # 2nd hidden layer
+    model.add(keras.layers.Dense(50,activation="relu")) # 3nd hidden layer
     model.add(keras.layers.Dense(10,activation="sigmoid")) # output layer, categories=10
     #relu = 0 for all negative numbers or relu = output for the positive numbers
     
+    # keras.utils.plot_model(model, show_shapes=True)
     model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
-    print(model.summary())
-    # keras.utils.plot_model(model, show_shapes=True)
     weights, biases = model.layers[1].get_weights()
+    print(model.summary())
     model.compile(loss="sparse_categorical_crossentropy",optimizer="sgd",metrics=["accuracy"])
     # scc = for categorical data
     # sgd = stochastic gradient descent
