@@ -10,12 +10,18 @@
 \maketitle
 
 \section{Abstract}
-In this report, we present a study on implementing a neural network model for the classification of fashion items using the Fashion MNIST dataset.\\
-We compare the performance of the neural network approach with traditional machine learning algorithms such as Logistic Regression, and Multi-Layer Perceptron (MLP).\\
+This report investigates various classifiers applied to the Fashion-MNIST dataset, a more challenging version of the classic MNIST dataset.\\
+The dataset contains 70,000 28x28 grayscale images of fashion products from 10 categories from a dataset of Zalando article images, with 7,000 images per category.\\
+The dataset is commonly included in standard machine learning libraries. The data is normalized. \\
+Evaluating on the dataset the k-nearest neighbors, decision trees are evaluated on the dataset. A conventional neural network (CNN) are also tested.
+Splitting the data after combining the train and test to new train, test and using 10-fold validation.
+Comparing the performance of the above classifiers neural network approach with traditional machine learning algorithms such as Logistic Regression, soft max, and Multi-Layer Perceptron (MLP).\\
 The report discusses the project methodology, experimental results, and conclusions drawn from the comparison.
-
+ 
 \section{Introduction}
-Your introduction text here.
+The task involves building a classification model to categorize fashion items into predefined classes using the Fashion MNIST dataset.
+The report explores the effectiveness of neural network architectures in comparison to conventional machine learning techniques. The dataset consists of grayscale images of fashion items, each associated with a specific label indicating its category.
+
 
 \section{Related Work and Required Background}
 
@@ -54,7 +60,8 @@ These layers function similarly to traditional neural networks, connecting all n
 Your previous attempts description text here.
 
 \section{Project Description}
-Your project description text here.
+Splitting the data into test and train.
+
 
 \section{Simulation Results}
 Your experiments/simulation results text here.
