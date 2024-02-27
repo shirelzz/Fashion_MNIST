@@ -1,5 +1,10 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{pifont}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+% \geometry{margin=1.5in}
 
 \title{Deep Learning and Natural Language Processing Project}
 \author{Moria Grohar, Shirel Zecharia}
@@ -10,38 +15,72 @@
 \maketitle
 
 \section{Abstract}
-This report investigates various classifiers applied to the Fashion-MNIST dataset, a more challenging version of the classic MNIST dataset.\\
-The dataset contains 70,000 28x28 grayscale images of fashion products from 10 categories from a dataset of Zalando article images, with 7,000 images per category.\\
-The dataset is commonly included in standard machine learning libraries. The data is normalized. \\
-Evaluating on the dataset the k-nearest neighbors, decision trees are evaluated on the dataset. A conventional neural network (CNN) are also tested.
-Splitting the data after combining the train and test to new train, test and using 10-fold validation.
-Comparing the performance of the above classifiers neural network approach with traditional machine learning algorithms such as Logistic Regression, soft max, and Multi-Layer Perceptron (MLP).\\
+In this report, we present a study on implementing a neural network model for the classification of fashion items using the Fashion MNIST dataset.\\
+We compare the performance of the neural network approach with traditional machine learning algorithms such as Logistic Regression, and Multi-Layer Perceptron (MLP).\\
 The report discusses the project methodology, experimental results, and conclusions drawn from the comparison.
- 
-\section{Introduction}
-The task involves building a classification model to categorize fashion items into predefined classes using the Fashion MNIST dataset.
-The report explores the effectiveness of neural network architectures in comparison to conventional machine learning techniques. The dataset consists of grayscale images of fashion items, each associated with a specific label indicating its category.
 
+\section{Introduction}
+Your introduction text here.
 
 \section{Related Work and Required Background}
 
-\section{Activation Functions}
-Activation functions play a crucial role, acting as the gatekeepers within artificial neural networks. These mathematical functions determine the output of a neuron, influencing how information flows through the network and ultimately shaping its learning and decision-making capabilities.\\
-Traditional neural networks without activation functions would simply perform linear transformations on the input data. This limitation restricts them from learning complex patterns and relationships in the data, hindering their ability to perform tasks like image recognition or natural language processing.\\
-A neuron in a neural network receives multiple inputs, each carrying a specific value. These inputs are combined through weighted connections and then passed through an activation function. The function acts like a filter, transforming the combined input into a single output value. This output value then becomes the basis for the neuron's activation, influencing the signals it transmits to other neurons in the network.
+\subsection{Softmax Regression}
+Softmax regression, also known as multinomial logistic regression, is a generalization of logistic regression.
+While in logistic regression we assumed that the labels were binary: ${y(i)\in{0,1}}$, In Softmax regression we are able to handle multiple labels ${y(i)\in{1,…,K}}$ where ${k}$ is the number of classes.\\
 
-\subsection{Popular Activation Functions:}
-\subsubsection{Rectified Linear Unit}
+In softmax regression, the goal is to predict the probability that an input sample belongs to each possible class. This is achieved by applying the softmax function to the output of a linear model. The linear model computes a score for each class based on the input features, and the softmax function converts these scores into probabilities.\\
+
+Mathematically, given an input vector ${x}$, softmax regression computes the probability ${P(y=i | x)}$ that the input belongs to class ${i}$ as follows:
+$${P(y=i | x) = \frac{e^{x^{T} \cdot W_i + b_i}}{\sum_{j=1}^{k} e^{x^{T} \cdot W_j + b_j}}
+}$$
+
+\hbox{Where:}
+\hbox{y: target variable (class)}
+\hbox{x: vector of input features}
+\hbox{T: denotes the transpose applied to the vector}
+\hbox{${W_i}$: the weight vector associated with class ${i}$}
+\hbox{${b_i}$: the bias term associated with class ${i}$}  \hfill\newline
+\textbf{Understanding The Process:}\hfill\newline\\
+Linear Transformation: For each class, it computes a linear combination of the input features using class-specific weights. This generates a score for each class, indicating its "fit" for the data point.\hfill\newline\\
+Softmax Function: This function takes the vector of scores and transforms them into probabilities. It ensures:
+\begin{itemize}
+\item Non-negativity: All probabilities are positive (between 0 and 1).
+\end{itemize}
+\begin{itemize}
+\item Normalization: The sum of all probabilities for a single data point is always 1, representing a valid probability distribution.
+\end{itemize}
+The softmax function is often used as the final activation layer in multi-class neural networks as we will discuss later in the article.
+
+\subsection{Activation Functions}
+Activation functions play a crucial role, acting as the gatekeepers within artificial neural networks. These mathematical functions determine the output of a neuron, influencing how information flows through the network and ultimately shaping its learning and decision-making capabilities.\\\\
+Traditional neural networks without activation functions would simply perform linear transformations on the input data. This limitation restricts them from learning complex patterns and relationships in the data, hindering their ability to perform tasks like image recognition or natural language processing.\\\\
+A neuron in a neural network receives multiple inputs, each carrying a specific value. These inputs are combined through weighted connections and then passed through an activation function. The function acts like a filter, transforming the combined input into a single output value. This output value then becomes the basis for the neuron's activation, influencing the signals it transmits to other neurons in the network.\\\\
+The selection of an appropriate activation function depends on the specific task and network architecture. While ReLU and Leaky ReLU are popular choices due to their efficiency, other functions like sigmoid and tanh might be suitable for specific scenarios like output normalization or recurrent neural networks.
+
+\subsubsection{Popular Activation Functions:}
+
+\begin{itemize}
+\item[\ding{118}] Rectified Linear Unit:
 ReLU (Rectified Linear Unit) activation functions serve as the non-linear activation function of choice in most CNN architectures. ReLU introduces non-linearity into the network, enabling it to learn complex mappings between the input and output. Mathematically, ReLU simply outputs the input if it is positive and zero otherwise, which simplifies computations and accelerates convergence during training.
+\end{itemize}
 
-\subsubsection{Leaky Rectified Linear Unit}
+\begin{itemize}
+\item[\ding{118}] Leaky Rectified Linear Unit:
 Leaky ReLU is a variant of the ReLU activation function that addresses the "dying ReLU" problem, where neurons may become inactive and cease to update their weights during training. Unlike ReLU, which sets negative values to zero, Leaky ReLU allows a small, non-zero gradient for negative inputs. This modification ensures that neurons remain active and continue to contribute to the learning process, especially in deeper networks where vanishing gradients are more prevalent.
+\end{itemize}
 
-\subsubsection{Sigmoid}
+\begin{itemize}
+\item[\ding{118}] Sigmoid:
 This function squishes the input values between 0 and 1, mimicking the firing behavior of biological neurons. However, its vanishing gradients can hinder learning in deep networks.
+\end{itemize}
 
-\subsubsection{Tanh (Hyperbolic tangent)}
+\begin{itemize}
+\item[\ding{118}] Tanh (Hyperbolic tangent):
 Similar to sigmoid, tanh maps the input values to a range of -1 to 1. It offers slightly better gradients than sigmoid but suffers from similar limitations.
+\end{itemize}
+
+\subsection{Recurrent Neural Networks}
+
 
 \subsection{Convolutional Neural Networks}
 Convolutional Neural Networks (CNNs) are a specific type of artificial neural network architecture particularly well-suited for analyzing image data. They excel at tasks like image classification, object detection, and image segmentation. Unlike traditional neural networks, CNNs incorporate an additional layer type called a convolutional layer to extract features from the input data. The essence of a CNN lies in its ability to automatically learn spatial hierarchies of features from raw data. These networks consist of several layers, typically including convolutional layers, pooling layers, and fully connected layers.
@@ -60,8 +99,7 @@ These layers function similarly to traditional neural networks, connecting all n
 Your previous attempts description text here.
 
 \section{Project Description}
-Splitting the data into test and train.
-
+Your project description text here.
 
 \section{Simulation Results}
 Your experiments/simulation results text here.
