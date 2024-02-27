@@ -23,7 +23,7 @@ def get_data():
     fashion_mnist = tf.keras.datasets.fashion_mnist
 
     (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
-    print(train_images)
+    # print(train_images)
     # Combine train and test images and labels
     images = np.concatenate((train_images, test_images))
     labels = np.concatenate((train_labels, test_labels))

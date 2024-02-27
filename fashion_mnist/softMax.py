@@ -3,7 +3,6 @@ from sklearn.preprocessing import StandardScaler
 from modelUtils import *
 
 import tensorflow as tf
-
 # from tensorflow.keras import layers, models
 layers, models = tf.keras.layers, tf.keras.models
 
