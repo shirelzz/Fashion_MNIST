@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  26 FEB 2024 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  1 MAR 2024 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,58 +23,513 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+)) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count195
+\Gm@cntv=\count196
+\c@Gm@tempcnt=\count197
+\Gm@bindingoffset=\dimen143
+\Gm@wd@mp=\dimen144
+\Gm@odd@mp=\dimen145
+\Gm@even@mp=\dimen146
+\Gm@layoutwidth=\dimen147
+\Gm@layoutheight=\dimen148
+\Gm@layouthoffset=\dimen149
+\Gm@layoutvoffset=\dimen150
+\Gm@dimlist=\toks20
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen151
+)) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen152
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count198
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count199
+\leftroot@=\count266
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count267
+\DOTSCASE@=\count268
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count269
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count270
+\dotsspace@=\muskip16
+\c@parentequation=\count271
+\dspbrk@lvl=\count272
+\tag@help=\toks22
+\row@=\count273
+\column@=\count274
+\maxfields@=\count275
+\andhelp@=\toks23
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks24
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count276
+\float@exts=\toks26
+\float@box=\box53
+\@float@everytoks=\toks27
+\@floatcapt=\box54
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count277
+\lst@gtempboxa=\box55
+\lst@token=\toks28
+\lst@length=\count278
+\lst@currlwidth=\dimen160
+\lst@column=\count279
+\lst@pos=\count280
+\lst@lostspace=\dimen161
+\lst@width=\dimen162
+\lst@newlines=\count281
+\lst@lineno=\count282
+\lst@maxwidth=\dimen163
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count283
+\lst@skipnumbers=\count284
+\lst@framebox=\box56
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count195
-\l__pdf_internal_box=\box51
+\l__color_backend_stack_int=\count285
+\l__pdf_internal_box=\box57
 ) (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 9.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 9.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count286
+\scratchdimen=\dimen164
+\scratchbox=\box58
+\nofMPsegments=\count287
+\nofMParguments=\count288
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen165
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
+\everyMPtoPDFconversion=\toks30
+) (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 397.485pt, 108.405pt)
+* v-part:(T,H,B)=(108.405pt, 578.15999pt, 108.405pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=397.485pt
+* \textheight=578.15999pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-0.86499pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Overfull \hbox (2.41615pt too wide) in paragraph at lines 12--19
-\OT1/cmr/m/n/10 This re-port in-ves-ti-gates var-i-ous clas-si-fiers ap-plied to the Fashion-MNIST dataset,
+\c@lstlisting=\count292
+
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 38.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--39
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--41
+
  []
 
 [1
 
-{C:/Users/moria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (document.aux)
+{C:/Users/moria/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+
+ []
+
+[3] [4]
+<imgFolder/dummyModelFlight.png, id=28, 157.08687pt x 46.67438pt>
+File: imgFolder/dummyModelFlight.png Graphic file (type png)
+<use imgFolder/dummyModelFlight.png>
+Package pdftex.def Info: imgFolder/dummyModelFlight.png  used on input line 154.
+(pdftex.def)             Requested size: 227.62204pt x 67.63548pt.
+<imgFolder/linearRegressionFlight.png, id=30, 134.00063pt x 47.17625pt>
+File: imgFolder/linearRegressionFlight.png Graphic file (type png)
+<use imgFolder/linearRegressionFlight.png>
+Package pdftex.def Info: imgFolder/linearRegressionFlight.png  used on input line 161.
+(pdftex.def)             Requested size: 227.62204pt x 80.13663pt.
+ [5 <./imgFolder/dummyModelFlight.png>]
+<imgFolder/ridgeRegressionFlight.png, id=35, 144.03813pt x 45.67062pt>
+File: imgFolder/ridgeRegressionFlight.png Graphic file (type png)
+<use imgFolder/ridgeRegressionFlight.png>
+Package pdftex.def Info: imgFolder/ridgeRegressionFlight.png  used on input line 168.
+(pdftex.def)             Requested size: 227.62204pt x 72.17549pt.
+<imgFolder/randomForestFlight.png, id=36, 128.48pt x 47.67813pt>
+File: imgFolder/randomForestFlight.png Graphic file (type png)
+<use imgFolder/randomForestFlight.png>
+Package pdftex.def Info: imgFolder/randomForestFlight.png  used on input line 175.
+(pdftex.def)             Requested size: 227.62204pt x 84.47609pt.
+<imgFolder/linearRegressionTensorflowFlight.png, id=37, 137.01187pt x 22.58438pt>
+File: imgFolder/linearRegressionTensorflowFlight.png Graphic file (type png)
+<use imgFolder/linearRegressionTensorflowFlight.png>
+Package pdftex.def Info: imgFolder/linearRegressionTensorflowFlight.png  used on input line 182.
+(pdftex.def)             Requested size: 227.62204pt x 37.5231pt.
+<imgFolder/neuronNetworkFlight.png, id=38, 135.50626pt x 22.58438pt>
+File: imgFolder/neuronNetworkFlight.png Graphic file (type png)
+<use imgFolder/neuronNetworkFlight.png>
+Package pdftex.def Info: imgFolder/neuronNetworkFlight.png  used on input line 191.
+(pdftex.def)             Requested size: 227.62204pt x 37.93835pt.
+ [6 <./imgFolder/linearRegressionFlight.png> <./imgFolder/ridgeRegressionFlight.png> <./imgFolder/randomForestFlight.png> <./imgFolder/linearRegressionTensorflowFlight.png>]
+<imgFolder/comparisonFlight.png, id=46, 388.95313pt x 215.80624pt>
+File: imgFolder/comparisonFlight.png Graphic file (type png)
+<use imgFolder/comparisonFlight.png>
+Package pdftex.def Info: imgFolder/comparisonFlight.png  used on input line 198.
+(pdftex.def)             Requested size: 227.62204pt x 126.29718pt.
+<imgFolder/RunningSoftMax.png, id=47, 740.26563pt x 287.0725pt>
+File: imgFolder/RunningSoftMax.png Graphic file (type png)
+<use imgFolder/RunningSoftMax.png>
+Package pdftex.def Info: imgFolder/RunningSoftMax.png  used on input line 247.
+(pdftex.def)             Requested size: 284.52756pt x 110.33708pt.
+ [7 <./imgFolder/neuronNetworkFlight.png> <./imgFolder/comparisonFlight.png>]
+<imgFolder/softMaxResult.png, id=54, 193.22188pt x 27.10126pt>
+File: imgFolder/softMaxResult.png Graphic file (type png)
+<use imgFolder/softMaxResult.png>
+Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 253.
+(pdftex.def)             Requested size: 284.52756pt x 39.90823pt.
+<imgFolder/classificationReportSoftmax.png, id=55, 315.1775pt x 235.88126pt>
+File: imgFolder/classificationReportSoftmax.png Graphic file (type png)
+<use imgFolder/classificationReportSoftmax.png>
+Package pdftex.def Info: imgFolder/classificationReportSoftmax.png  used on input line 260.
+(pdftex.def)             Requested size: 284.52756pt x 212.95343pt.
+<softmax.png, id=56, 578.16pt x 361.35pt>
+File: softmax.png Graphic file (type png)
+<use softmax.png>
+Package pdftex.def Info: softmax.png  used on input line 267.
+(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
+ [8 <./imgFolder/RunningSoftMax.png> <./imgFolder/softMaxResult.png> <./imgFolder/classificationReportSoftmax.png>]
+<imgFolder/RunningCNNModel.png, id=63, 754.82pt x 221.82875pt>
+File: imgFolder/RunningCNNModel.png Graphic file (type png)
+<use imgFolder/RunningCNNModel.png>
+Package pdftex.def Info: imgFolder/RunningCNNModel.png  used on input line 278.
+(pdftex.def)             Requested size: 284.52756pt x 83.61543pt.
+File: imgFolder/softMaxResult.png Graphic file (type png)
+<use imgFolder/softMaxResult.png>
+Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 284.
+(pdftex.def)             Requested size: 284.52756pt x 39.90823pt.
+File: imgFolder/classificationReportSoftmax.png Graphic file (type png)
+<use imgFolder/classificationReportSoftmax.png>
+Package pdftex.def Info: imgFolder/classificationReportSoftmax.png  used on input line 291.
+(pdftex.def)             Requested size: 284.52756pt x 212.95343pt.
+ [9 <./softmax.png> <./imgFolder/RunningCNNModel.png>]
+File: softmax.png Graphic file (type png)
+<use softmax.png>
+Package pdftex.def Info: softmax.png  used on input line 298.
+(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
+File: imgFolder/neuronNetworkFlight.png Graphic file (type png)
+<use imgFolder/neuronNetworkFlight.png>
+Package pdftex.def Info: imgFolder/neuronNetworkFlight.png  used on input line 307.
+(pdftex.def)             Requested size: 227.62204pt x 37.93835pt.
+ [10]
+File: imgFolder/comparisonFlight.png Graphic file (type png)
+<use imgFolder/comparisonFlight.png>
+Package pdftex.def Info: imgFolder/comparisonFlight.png  used on input line 314.
+(pdftex.def)             Requested size: 227.62204pt x 126.29718pt.
+File: imgFolder/softMaxResult.png Graphic file (type png)
+<use imgFolder/softMaxResult.png>
+Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 329.
+(pdftex.def)             Requested size: 284.52756pt x 39.90823pt.
+ [11]
+Overfull \hbox (364.52275pt too wide) in paragraph at lines 368--370
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (34.5194pt too wide) in paragraph at lines 374--375
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (130.52037pt too wide) in paragraph at lines 377--378
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (136.52043pt too wide) in paragraph at lines 380--382
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (148.52055pt too wide) in paragraph at lines 382--383
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (118.52025pt too wide) in paragraph at lines 385--386
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (28.51933pt too wide) in paragraph at lines 387--388
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (58.51964pt too wide) in paragraph at lines 390--391
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (28.51933pt too wide) in paragraph at lines 391--393
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (196.52104pt too wide) in paragraph at lines 393--394
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (190.52098pt too wide) in paragraph at lines 394--395
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[12]
+Overfull \hbox (130.52037pt too wide) in paragraph at lines 397--398
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.51945pt too wide) in paragraph at lines 398--400
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (100.52007pt too wide) in paragraph at lines 401--402
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (82.51988pt too wide) in paragraph at lines 402--403
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (232.52141pt too wide) in paragraph at lines 405--407
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (154.52061pt too wide) in paragraph at lines 408--409
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (124.52031pt too wide) in paragraph at lines 409--411
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (208.52116pt too wide) in paragraph at lines 412--413
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (328.52238pt too wide) in paragraph at lines 413--415
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.52013pt too wide) in paragraph at lines 421--422
+[][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (4.51909pt too wide) in paragraph at lines 438--439
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[13]
+Overfull \hbox (274.52184pt too wide) in paragraph at lines 453--455
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (124.52031pt too wide) in paragraph at lines 456--457
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (268.52177pt too wide) in paragraph at lines 464--466
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[14] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 458 strings out of 474542
- 8896 string characters out of 5744447
- 1927978 words of memory out of 5000000
- 22759 multiletter control sequences out of 15000+600000
- 561709 words of font info for 48 fonts, out of 8000000 for 9000
+ 4443 strings out of 474542
+ 67848 string characters out of 5744447
+ 1991978 words of memory out of 5000000
+ 26649 multiletter control sequences out of 15000+600000
+ 564477 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,6n,50p,301b,197s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on document.pdf (2 pages, 63671 bytes).
+ 57i,11n,65p,695b,1545s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\moria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on document.pdf (14 pages, 363157 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
+ 145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

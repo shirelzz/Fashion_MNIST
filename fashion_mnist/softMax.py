@@ -1,7 +1,6 @@
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
 from modelUtils import *
-
+import pandas as pd
 import tensorflow as tf
 # from tensorflow.keras import layers, models
 layers, models = tf.keras.layers, tf.keras.models
@@ -27,8 +26,14 @@ def train_softmax_model(X_train, y_train, X_test, y_test, num_classes):
     model.compile(optimizer='adam',
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
-
+    epochs = 10
     # Train the model
-    model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+    model_history = model.fit(X_train, y_train, epochs= epochs, batch_size=32, validation_data=(X_test, y_test))
+    # model.fit(X_train, y_train, epochs=epochs, batch_size=32, validation_data=(X_test, y_test))
 
+    # Display the training history
+    pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+    plt.title('Soft max Training History, epochs: ' + str(epochs))
+    plt.show()
+    plt.savefig("imgFolder/softMax_fig")
     return model

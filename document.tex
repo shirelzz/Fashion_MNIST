@@ -4,8 +4,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{amsmath}
+\usepackage{float} % For specifying figure positioning
+\usepackage{listings}
 
-% \geometry{margin=1.5in}
+\geometry{margin=1.5in}
 
 \title{Deep Learning and Natural Language Processing Project}
 \author{Moria Grohar, Shirel Zecharia}
@@ -21,10 +23,16 @@ We compare the performance of the neural network approach with traditional machi
 The report discusses the project methodology, experimental results, and conclusions drawn from the comparison.
 
 \section{Introduction}
-Your introduction text here.
+This report explores the performance of various machine learning models for classifying fashion items from the well-known Fashion-MNIST dataset. This dataset consists of grayscale images of various clothing articles, each belonging to a specific category such as T-shirts, trousers, and shoes. The task of classifying these images is considered a classification problem.
+
+The report delves into the implementation and evaluation of different models,
+including several models from sklearn, neural network from tensorflow and CNN.
+
+The models were evaluated based on their loss function, with the aim of achieving the lowest possible loss to indicate better performance in classifying the fashion items.
+
+The report compares and analyzes the results of each model, providing insights into their strengths and weaknesses for this specific classification task. It also discusses potential areas for further exploration and improvement.
 
 \section{Related Work and Required Background}
-
 \subsection{Softmax Regression}
 Softmax regression, also known as multinomial logistic regression, is a generalization of logistic regression.
 While in logistic regression we assumed that the labels were binary: ${y(i)\in{0,1}}$, In Softmax regression we are able to handle multiple labels ${y(i)\in{1,…,K}}$ where ${k}$ is the number of classes.\\
@@ -33,7 +41,7 @@ In softmax regression, the goal is to predict the probability that an input samp
 
 Mathematically, given an input vector ${x}$, softmax regression computes the probability ${P(y=i | x)}$ that the input belongs to class ${i}$ as follows:
 $${P(y=i | x) = \frac{e^{x^{T} \cdot W_i + b_i}}{\sum_{j=1}^{k} e^{x^{T} \cdot W_j + b_j}}
-}$$
+        }$$
 
 \hbox{Where:}
 \hbox{y: target variable (class)}
@@ -45,10 +53,10 @@ $${P(y=i | x) = \frac{e^{x^{T} \cdot W_i + b_i}}{\sum_{j=1}^{k} e^{x^{T} \cdot W
 Linear Transformation: For each class, it computes a linear combination of the input features using class-specific weights. This generates a score for each class, indicating its "fit" for the data point.\hfill\newline\\
 Softmax Function: This function takes the vector of scores and transforms them into probabilities. It ensures:
 \begin{itemize}
-\item Non-negativity: All probabilities are positive (between 0 and 1).
+    \item Non-negativity: All probabilities are positive (between 0 and 1).
 \end{itemize}
 \begin{itemize}
-\item Normalization: The sum of all probabilities for a single data point is always 1, representing a valid probability distribution.
+    \item Normalization: The sum of all probabilities for a single data point is always 1, representing a valid probability distribution.
 \end{itemize}
 The softmax function is often used as the final activation layer in multi-class neural networks as we will discuss later in the article.
 
@@ -61,23 +69,23 @@ The selection of an appropriate activation function depends on the specific task
 \textbf{Popular Activation Functions:}\hfill\newline\\
 
 \begin{itemize}
-\item[\ding{118}] Rectified Linear Unit:
-ReLU (Rectified Linear Unit) activation functions serve as the non-linear activation function of choice in most CNN architectures. ReLU introduces non-linearity into the network, enabling it to learn complex mappings between the input and output. Mathematically, ReLU simply outputs the input if it is positive and zero otherwise, which simplifies computations and accelerates convergence during training.
+    \item[\ding{118}] Rectified Linear Unit:
+          ReLU (Rectified Linear Unit) activation functions serve as the non-linear activation function of choice in most CNN architectures. ReLU introduces non-linearity into the network, enabling it to learn complex mappings between the input and output. Mathematically, ReLU simply outputs the input if it is positive and zero otherwise, which simplifies computations and accelerates convergence during training.
 \end{itemize}
 
 \begin{itemize}
-\item[\ding{118}] Leaky Rectified Linear Unit:
-Leaky ReLU is a variant of the ReLU activation function that addresses the "dying ReLU" problem, where neurons may become inactive and cease to update their weights during training. Unlike ReLU, which sets negative values to zero, Leaky ReLU allows a small, non-zero gradient for negative inputs. This modification ensures that neurons remain active and continue to contribute to the learning process, especially in deeper networks where vanishing gradients are more prevalent.
+    \item[\ding{118}] Leaky Rectified Linear Unit:
+          Leaky ReLU is a variant of the ReLU activation function that addresses the "dying ReLU" problem, where neurons may become inactive and cease to update their weights during training. Unlike ReLU, which sets negative values to zero, Leaky ReLU allows a small, non-zero gradient for negative inputs. This modification ensures that neurons remain active and continue to contribute to the learning process, especially in deeper networks where vanishing gradients are more prevalent.
 \end{itemize}
 
 \begin{itemize}
-\item[\ding{118}] Sigmoid:
-This function squishes the input values between 0 and 1, mimicking the firing behavior of biological neurons. However, its vanishing gradients can hinder learning in deep networks.
+    \item[\ding{118}] Sigmoid:
+          This function squishes the input values between 0 and 1, mimicking the firing behavior of biological neurons. However, its vanishing gradients can hinder learning in deep networks.
 \end{itemize}
 
 \begin{itemize}
-\item[\ding{118}] Tanh (Hyperbolic tangent):
-Similar to sigmoid, tanh maps the input values to a range of -1 to 1. It offers slightly better gradients than sigmoid but suffers from similar limitations.
+    \item[\ding{118}] Tanh (Hyperbolic tangent):
+          Similar to sigmoid, tanh maps the input values to a range of -1 to 1. It offers slightly better gradients than sigmoid but suffers from similar limitations.
 \end{itemize}
 
 \subsection{Recurrent Neural Networks}
@@ -110,8 +118,8 @@ RMSprop addresses a limitation of SGD, where frequent updates based on noisy gra
 Its key Feature is that it incorporates an exponential moving average of the squared gradients for each parameter. This averages the recent updates and reduces the impact of large, infrequent gradients, leading to smoother convergence. This technique has an increased computational cost compared to SGD and RMSprop.This technique has an increased computational cost compared to SGD.
 
 \begin{align*}
-s_{t+1} & = \beta \cdot s_t + (1 - \beta) \cdot (\nabla L(\theta_t))^2\\
-\theta_{t+1} & = \theta_t - \frac{\eta}{\sqrt{s_{t+1}} + \epsilon} \cdot \nabla L(\theta_t)
+    s_{t+1}      & = \beta \cdot s_t + (1 - \beta) \cdot (\nabla L(\theta_t))^2                 \\
+    \theta_{t+1} & = \theta_t - \frac{\eta}{\sqrt{s_{t+1}} + \epsilon} \cdot \nabla L(\theta_t)
 \end{align*}
 
 \subsubsection{Adam (Adaptive Moment Estimation)}
@@ -120,60 +128,350 @@ It maintains exponential moving averages of gradients (similar to RMSprop) and s
 It incorporates momentum to account for the history of past updates, addressing the issue of getting stuck in local minima.
 It adaptively adjusts the learning rate for each parameter based on these estimates, aiming for optimal updates. This technique has an increased computational cost compared to SGD and RMSprop.
 \begin{align*}
-m_{t+1} & = \beta_1 \cdot m_t + (1 - \beta_1) \cdot \nabla L(\theta_t) \\
-v_{t+1} & = \beta_2 \cdot v_t + (1 - \beta_2) \cdot (\nabla L(\theta_t))^2 \\
-\hat{m}_{t+1} & = \frac{m_{t+1}}{1 - \beta_1^{t+1}} \\
-\hat{v}_{t+1} & = \frac{v_{t+1}}{1 - \beta_2^{t+1}} \\
-\theta_{t+1} & = \theta_t - \frac{\eta}{\sqrt{\hat{v}_{t+1}} + \epsilon} \cdot \hat{m}_{t+1}
+    m_{t+1}       & = \beta_1 \cdot m_t + (1 - \beta_1) \cdot \nabla L(\theta_t)                  \\
+    v_{t+1}       & = \beta_2 \cdot v_t + (1 - \beta_2) \cdot (\nabla L(\theta_t))^2              \\
+    \hat{m}_{t+1} & = \frac{m_{t+1}}{1 - \beta_1^{t+1}}                                           \\
+    \hat{v}_{t+1} & = \frac{v_{t+1}}{1 - \beta_2^{t+1}}                                           \\
+    \theta_{t+1}  & = \theta_t - \frac{\eta}{\sqrt{\hat{v}_{t+1}} + \epsilon} \cdot \hat{m}_{t+1}
 \end{align*}
 
 
 \section{Previous Attempts}
-Your previous attempts description text here.
+\subsection{First Attempts with different data}
+Model Selection and Evaluation:
+
+The project explored the performance of various models for predicting flight ticket prices in a dataset containing information on bookings between major Indian cities. The target variable was the "Price" column, indicating a continuous value. Therefore, the problem was classified as a regression task.
+
+The data was split into train and test sets for model evaluation. Several models were implemented and compared based on their performance in reducing the mean squared error (MSE), which served as the loss function.
+
+Model Performances:
+
+
+Dummy Model: This baseline model adopted a simple mean strategy, resulting in high loss values.
+\begin{figure}[H]
+    \caption{Dummy model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/dummyModelFlight.png}
+\end{figure}
+
+Linear Regression: Compared to the dummy model, linear regression showed improvement but still yielded significant loss.
+\begin{figure}[H]
+    \caption{Linear Regression model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/linearRegressionFlight.png}
+\end{figure}
+
+Ridge Regression: A slight reduction in loss compared to linear regression was observed, but the values remained high.
+\begin{figure}[H]
+    \caption{Ridge Regression model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/ridgeRegressionFlight.png}
+\end{figure}
+
+Random Forest: This model achieved a more significant reduction in loss compared to prior models, although the value remained high.
+\begin{figure}[H]
+    \caption{Random Forest model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/randomForestFlight.png}
+\end{figure}
+
+Linear Regression with TensorFlow: Implementing linear regression using TensorFlow did not improve performance and even resulted in higher loss compared to the basic implementation.
+\begin{figure}[H]
+    \caption{Linear Regression with TensorFlow model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/linearRegressionTensorflowFlight.png}
+\end{figure}
+
+Neural Network Exploration:
+
+\begin{figure}[H]
+    A neural network model with 2 hidden layers and 80 hidden units was constructed using TensorFlow. Hyperparameter tuning involved adjusting the learning rate and number of epochs, ultimately leading to the configuration with the lowest observed loss.
+    \caption{neural network model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/neuronNetworkFlight.png}
+\end{figure}
+
+Comparison and Conclusion:
+\begin{figure}[H]
+    \caption{comparison model flight result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/comparisonFlight.png}
+\end{figure}
+While the neural network achieved competitive results compared to simpler models after hyperparameter adjustments, the random forest remained the best performing model based on the achieved loss values.
+
+\subsection{Second Attempts with Fashion-MNIST data (our data)}
+Model Selection and Evaluation:
+
+The project explored the performance of various models for classification of a picture of cloth to a various category. Therefore, the problem was classified as a classification task.
+
+The data was split into train and test sets for model evaluation, in some models also to validation. Several models were implemented and compared based on their performance in reducing the loss function.
+
+Model Performances:
+
+
+% KNeighborsClassifier Model: This model run with k=5 (k nearest neighbors), resulting in high loss values (MSE value).
+% \begin{figure}[H]
+%     \caption{KNeighborsClassifier model fashion MNIST result:}
+%     \centering
+%     \includegraphics[width=8cm]{imgFolder/KNNFashionMNIST.png}
+% \end{figure}
+
+% Logistic Regression: Compared to the KNeighborsClassifier model, logistic regression showed improvement of the MSE - the MSE is reduced, but accuracy also reduced.
+% \begin{figure}[H]
+%     \caption{Logistic Regression model Fashion MNIST result:}
+%     \centering
+%     \includegraphics[width=8cm]{imgFolder/logisticRegressionFashionMNIST.png}
+% \end{figure}
+
+% randomForest: A slight reduction in MSE compared to linear regression was observed, but the values remained high.
+% \begin{figure}[H]
+%     \caption{Random forest model Fashion MNIST result:}
+%     \centering
+%     \includegraphics[width=8cm]{imgFolder/RandomForestClassifierFashionMNIST.png}
+% \end{figure}
+
+% Random Forest: This model achieved a more significant reduction in loss compared to prior models, although the value remained high.
+% \begin{figure}[H]
+%     \caption{Random Forest model Fashion MNIST result:}
+%     \centering
+%     \includegraphics[width=8cm]{imgFolder/randomForestFlight.png}
+% \end{figure}
+
+Soft max: a function that turns a vector of K real values into a vector of K real values that sum to 1.
+In an effort to optimize the performance of the model's performance, various hyperparameters were explored.
+The number of epochs controlling the training iterations was adjusted. Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated. The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
+The accuracy calculation process
+\begin{figure}[H]
+    \caption{Running the model:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/RunningSoftMax.png}
+\end{figure}
+The result of the run:
+\begin{figure}[H]
+    \caption{Result:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/softMaxResult.png}
+\end{figure}
+
+The classification report in concentrated form:
+\begin{figure}[H]
+    \caption{Classification Report:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/classificationReportSoftmax.png}
+\end{figure}
+
+All the data of the epochs can be shown in a graph that shows the loss function and the accuracy in every run.
+\begin{figure}[H]
+    \caption{Soft max training history:}
+    \centering
+    \includegraphics[width=10cm]{softmax.png}
+\end{figure}
+
+
+CNN: a function that turns a vector of K real values into a vector of K real values that sum to 1.
+% In an effort to optimize the performance of the model's performance, various hyperparameters were explored.
+% The number of epochs controlling the training iterations was adjusted. Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated. The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
+% The accuracy calculation process
+\begin{figure}[H]
+    \caption{Running the model:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/RunningCNNModel.png}
+\end{figure}
+The result of the run:
+\begin{figure}[H]
+    \caption{Result:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/softMaxResult.png}
+\end{figure}
+
+The classification report in concentrated form:
+\begin{figure}[H]
+    \caption{Classification Report:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/classificationReportSoftmax.png}
+\end{figure}
+
+All the data of the epochs can be shown in a graph that shows the loss function and the accuracy in every run.
+\begin{figure}[H]
+    \caption{Soft max training history:}
+    \centering
+    \includegraphics[width=10cm]{softmax.png}
+\end{figure}
+
+Neural Network Exploration:
+
+\begin{figure}[H]
+    A neural network model with 2 hidden layers and 80 hidden units was constructed using TensorFlow. Hyperparameter tuning involved adjusting the learning rate and number of epochs, ultimately leading to the configuration with the lowest observed loss.
+    \caption{neural network model Fashion MNIST result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/neuronNetworkFlight.png}
+\end{figure}
+
+Comparison and Conclusion:
+\begin{figure}[H]
+    \caption{comparison model Fashion MNIST result:}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/comparisonFlight.png}
+\end{figure}
+While the neural network achieved competitive results compared to simpler models after hyperparameter adjustments, the random forest remained the best performing model based on the achieved loss values.
 
 \section{Project Description}
 Your project description text here.
+
 
 \section{Simulation Results}
 
 \subsection{Softmax Regression Model}
 
-\begin{figure}[h]
-\caption{Training history of the data}
-\centering
-\includegraphics[width=8cm]{Figure_relu.png}
+\begin{figure}[H]
+    \caption{Result:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/softMaxResult.png}
 \end{figure}
 
 \subsection{RNN Model}
 
-\begin{figure}[h]
-\caption{Training history of the data}
-\centering
-\includegraphics[width=8cm]{Figure_relu.png}
-\end{figure}
+% \begin{figure}[H]
+% \caption{Training history of the data}
+% \centering
+% \includegraphics[width=8cm]{imgFolder/Figure_relu.png}
+% \end{figure}
 
-\subsection{CNN Model}
+\subsection{Neural Network Model}
 
-\begin{figure}[h]
-\caption{Training history of the data}
-\centering
-\includegraphics[width=8cm]{Figure_relu.png}
-\end{figure}
+% \begin{figure}[H]
+% \caption{Training history of the data}
+% \centering
+% \includegraphics[width=8cm]{imgFolder/Figure_relu.png}
+% \end{figure}
 \newpage
 
 \section{Code}
 \subsection{CNN Model}
-    The CNN architecture defined in this function follows a common pattern used for image classification tasks.
-    It starts with convolutional layers that learn low-level features such as edges and textures.
-    As the network deepens, subsequent layers learn increasingly complex and abstract features.
-    Max pooling layers help in reducing spatial dimensions while retaining important features.
-    Finally, the flattened feature vectors are fed into fully connected layers for classification.
-    The use of ReLU activation functions helps in introducing non-linearity,
-    and the softmax activation in the output layer enables the model to output class probabilities,
-    making it suitable for multi-class classification tasks.
-    Overall, this CNN architecture efficiently learns hierarchical representations from image data,
-    enabling accurate classification.
+The CNN architecture defined in this function follows a common pattern used for image classification tasks.
+It starts with convolutional layers that learn low-level features such as edges and textures.
+As the network deepens, subsequent layers learn increasingly complex and abstract features.
+Max pooling layers help in reducing spatial dimensions while retaining important features.
+Finally, the flattened feature vectors are fed into fully connected layers for classification.
+The use of ReLU activation functions helps in introducing non-linearity,
+and the softmax activation in the output layer enables the model to output class probabilities,
+making it suitable for multi-class classification tasks.
+Overall, this CNN architecture efficiently learns hierarchical representations from image data,
+enabling accurate classification.
 
+\begin{lstlisting}[caption=CNN Functions code example, label=python_code]
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import tensorflow as tf
+layers, models = tf.keras.layers, tf.keras.models
+BatchNormalization, Dropout, LeakyReLU = tf.keras.layers.BatchNormalization, tf.keras.layers.Dropout, tf.keras.layers.LeakyReLU
+
+def create_cnn_model(input_shape, num_classes):
+
+    """
+    Description:
+    This function constructs a CNN model using the Keras Sequential API.
+    The model architecture consists of several layers:
+
+    Convolutional Layers: These layers apply a convolution operation to the input image,
+    extracting various features through filters.
+    The activation function used is ReLU,
+    which introduces non-linearity into the model, enabling it to learn complex patterns.
+
+    Batch Normalization: This technique is used to improve the training stability and speed
+    by normalizing the inputs of each layer.
+
+    MaxPooling Layers: Max pooling reduces the spatial dimensions of the feature maps,
+    effectively downsampling the input.
+    It retains the most important features while reducing computational
+    complexity and preventing overfitting.
+
+    Flatten Layer: This layer flattens the 2D feature maps into a 1D vector,
+    preparing the data for input into a fully connected neural network.
+
+    Dense Layers: Fully connected layers that perform classification based on the learned features.
+    The first dense layer has 64 units with ReLU activation, enabling the network to learn complex
+    patterns in the flattened feature vectors.
+    The final dense layer has units equal to the number of classes
+    in the dataset, with softmax activation, which outputs probabilities for each class,
+    indicating the likelihood of the input image belonging to each class.
+
+    Dropout: This layer was added to prevent overfitting.
+    It works by randomly setting a fraction of input units to zero during training,
+    which helps to prevent the network from relying too much on specific neurons
+    and encourages it to learn more robust features.
+    We've defined a Dropout layer with a dropout rate of 0.2.
+    This means during training, 20% of the input units to the Dropout layer will be randomly set to zero.
+
+    Parameters:
+    - input_shape: Tuple specifying the shape of the input images (height, width, channels).
+    - num_classes: Integer indicating the number of classes in the classification task.
+
+    notes:
+        - I was experiencing with ReLU and Leaky ReLU and the results were slightly better with ReLU.
+        - Deepening the layers more with MaxPooling2D is impossible because the input images are relatively small (28*28)
+
+    """
+    # activation = 'relu'
+    activation = LeakyReLU(alpha=0.1)
+    dropout_rate = 0.3
+
+    model = models.Sequential([
+        layers.Conv2D(32, (3, 3), activation=activation, input_shape=input_shape),  # 32 filters of size 3x3
+        BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation=activation),
+        BatchNormalization(),
+        layers.MaxPooling2D((2, 2)),
+        layers.Conv2D(64, (3, 3), activation=activation),
+        BatchNormalization(),
+        layers.Flatten(),
+        layers.Dense(64, activation=activation),
+        Dropout(dropout_rate),
+        layers.Dense(num_classes, activation='softmax')
+    ])
+
+    return model
+
+
+def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
+    """
+    notes: I was experiencing with different parameters:
+    - number of epochs: 8, 10, 12, 16
+      results were best with 8
+    - optimizers: Adam, SGD, RMSprop
+      results were best with Adam
+    - loss functions:
+
+    """
+    # Reshape the input data for CNN
+    X_train = np.array(X_train).reshape(-1, 28, 28, 1)
+    X_test = np.array(X_test).reshape(-1, 28, 28, 1)
+
+    # Create the model
+    model = create_cnn_model((28, 28, 1), num_classes)  # grayscale image of size 28x28 pixels with one channel.
+
+    # Compile the model
+    # optimizer = tf.keras.optimizers.legacy.RMSprop(learning_rate=0.001, momentum=0.9)
+    optimizer = 'adam'
+    model.compile(optimizer=optimizer,
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
+
+    # Train the model
+    epochs = 8
+    model_history = model.fit(X_train, y_train, epochs=epochs, batch_size=32, validation_data=(X_test, y_test))
+
+    # Display the training history
+    pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+    plt.title('CNN Training History, epochs: ' + str(epochs))
+    plt.show()
+    plt.savefig("imgFolder/CNN_fig")
+
+    return model
+
+\end{lstlisting}
 \section{Conclusion}
 Your conclusion text here.
 

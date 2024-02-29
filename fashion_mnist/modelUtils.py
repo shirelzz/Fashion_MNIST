@@ -19,6 +19,7 @@ def evaluate_model(model, X_test, y_test):
     # Print classification report
     print("\nClassification Report:")
     print(classification_report(y_test, y_pred_classes))
+    return (loss, accuracy)
 
 
 def evaluate_model1(model, X_test, y_test):
@@ -29,15 +30,19 @@ def evaluate_model1(model, X_test, y_test):
     loss, accuracy = model.evaluate(X_test, y_test)
     print("Test Loss:", loss)
     print("Test Accuracy:", accuracy)
+    return (loss, accuracy)
 
-
-def train_text_results_modules(model, X_train, y_train, X_test, y_test):
+# def train_test_evaluate_results_modules(model, X_train, y_train, X_test, y_test):
+#     model.fit(X_train, y_train)
+#     return evaluate_model(model, X_test, y_test)
+    
+def train_test_results_modules(model, X_train, y_train, X_test, y_test):
     model.fit(X_train, y_train)
     y_predict = model.predict(X_test)
-    model.score(X_test, y_test)
+    print("ACCURACY: ", model.score(X_test, y_test))
     # MSE
-    knn_mse = mean_squared_error(y_test, y_predict)
-    print("MSE: ", knn_mse)
+    mse = mean_squared_error(y_test, y_predict)
+    print("MSE: ", mse)
 
     # RMSE
     print("RMSE: ", np.sqrt(mean_squared_error(y_test, y_predict)))
@@ -47,10 +52,11 @@ def train_text_results_modules(model, X_train, y_train, X_test, y_test):
 
     # R2 Score
     print("R2 Score: ", r2_score(y_test, y_predict))
+    return (mse, y_predict)
 
 
 def find_best_k_for_KNN(X_train, y_train, X_test, y_test):
-    k_range = range(0, 50, 5)
+    k_range = range(5, 50, 5)
     scores = []
     for k in k_range:
         print(k)
@@ -67,7 +73,7 @@ def find_best_k_for_KNN(X_train, y_train, X_test, y_test):
 
     # Finding the maximum k - the number of nearest neighbors:
     max_score = max(scores)
-    best_k = scores.index(max_score)
+    best_k = (scores.index(max_score) + 1) * 5
     print("The best accuracy of the knn model is when k =", best_k, ", and the score is:", max_score)
 
     return best_k
