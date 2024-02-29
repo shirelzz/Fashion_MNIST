@@ -22,7 +22,7 @@ def create_cnn_model(input_shape, num_classes):
 
     Parameters:
     - input_shape: Tuple specifying the shape of the input images (height, width, channels).
-    - num_classes: Integer indicating the number of classes in the classification task.
+    - num_classes: Number of classes for classification..
 
     Returns:
     - model: A model object.
@@ -85,6 +85,7 @@ def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
 
+    # Apply early stopping
     early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
 
     # Train the model
@@ -97,6 +98,8 @@ def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
 
     # Get the epoch where the fit stopped in
     stop = early_stopping.stopped_epoch
+    if stop == 0:
+        stop = epochs
 
     # Display the training history
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
