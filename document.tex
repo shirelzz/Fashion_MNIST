@@ -154,13 +154,15 @@ v_{t+1} & = \beta_2 \cdot v_t + (1 - \beta_2) \cdot (\nabla L(\theta_t))^2 \\
 \theta_{t+1} & = \theta_t - \frac{\eta}{\sqrt{\hat{v}_{t+1}} + \epsilon} \cdot \hat{m}_{t+1}
 \end{align*}
 
-
+\newpage
 \section{Previous Attempts}
 Your previous attempts description text here.
 
+\newpage
 \section{Project Description}
 Your project description text here.
 
+\newpage
 \section{Simulation Results}
 
 \subsection{Softmax Regression Model}
@@ -168,31 +170,74 @@ Your project description text here.
 \begin{figure}[h]
 \caption{Training history of the data}
 \centering
-\includegraphics[width=8cm]{Figure_relu.png}
+\includegraphics[width=8cm]{softmaxResults/Figure_softmax.png}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Output}
+\centering
+\includegraphics[width=8cm]{softmaxResults/softmaxOutput.jpg}
 \end{figure}
 
 \subsection{RNN Model}
 
-\begin{figure}[h]
-\caption{Training history of the data}
-\centering
-\includegraphics[width=8cm]{Figure_relu.png}
-\end{figure}
+% \begin{figure}[h]
+% \caption{Training history of the data}
+% \centering
+% \includegraphics[width=8cm]{insert.png}
+% \end{figure}
+
+% \begin{figure}[h]
+% \caption{Output}
+% \centering
+% \includegraphics[width=8cm]{insert.jpg}
+% \end{figure}
 
 \subsection{CNN Model}
 
 \begin{figure}[h]
 \caption{Training history of the data}
 \centering
-\includegraphics[width=8cm]{Figure_relu.png}
+\includegraphics[width=8cm]{CNNReults/Figure_1.png}
 \end{figure}
+
+\begin{figure}[h]
+\caption{Output}
+\centering
+\includegraphics[width=8cm]{CNNReults/CNNoutput.jpg}
+\end{figure}
+
 \newpage
-
 \section{Code}
+\subsection{Softmax Regression}
+softMax.py implements softmax regression, a technique for multi-class classification tasks, using TensorFlow's Keras API. It comprises two functions: create-softmax-model and train-softmax-model. The former constructs a softmax regression model with a single Dense layer, which outputs class probabilities for input images. The latter function trains the model using the specified training and test data, employing the Adam optimizer and sparse categorical cross-entropy loss. The training process is visualized through a plot showcasing the model's training history (as we saw in figure 1), including loss and accuracy metrics over epochs.
+
+\begin{figure}[h]
+\caption{Creation of the Softmax model}
+\centering
+\includegraphics[width=8cm]{softmaxResults/createModelSoftmax.jpg}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Training of the Softmax model}
+\centering
+\includegraphics[width=8cm]{softmaxResults/trainSoftmax.jpg}
+\end{figure}
+
+\newpage
+\subsection{RNN Model}
+
+\newpage
 \subsection{CNN Model}
-\code{trainCNNModel}
-\newline
-\newline
+CNN.py code implements a Convolutional Neural Network (CNN) using TensorFlow's Keras API for image classification tasks. It consists of two functions: create-cnn-model and train-cnn-model. The former constructs a CNN model with multiple convolutional and dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the CNN model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 5). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
+\code{create-cnn-model:}
+
+\begin{figure}[h]
+\caption{Creation of the CNN model}
+\centering
+\includegraphics[width=8cm]{CNNReults/createCNNModel.jpg}
+\end{figure}
+\text{ }\\
 Convolutional Layers: These layers apply a convolution operation to the input image,
 extracting various features through filters.
 The activation function used is ReLU,
@@ -216,18 +261,23 @@ It works by randomly setting a fraction of input units to zero during training,
 which helps to prevent the network from relying too much on specific neurons
 and encourages it to learn more robust features.
 We've defined a Dropout layer with a dropout rate of 0.2.
-This means during training, ${20\%}$ of the input units to the Dropout layer will be randomly set to zero.
+This means during training, ${20\%}$ of the input units to the Dropout layer will be randomly set to zero.\\\newline
+\code{train-cnn-model:}\\\newline
+This function prepares the training and test datasets by reshaping them into the format
+required for CNN input, constructs the CNN model by calling the `create-cnn-model` function,
+compiles the model and trains the model using the provided training data.
+I used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
+trying to avoid overfitting.
+The training process's history is plotted, showing metrics evolution over epochs.\\
 
-\textbf{Code}\hfill\newline\\
-
-\code{def createCNNModel(inputShape, numClasses):}\newline
-
-
-\code{2nd func:}\newline
-
-earlystopping
+\begin{figure}[h]
+\caption{Training of the CNN model}
+\centering
+\includegraphics[width=8cm]{CNNReults/trainCNN.jpg}
+\end{figure}
 
 
+\newpage
 \section{Conclusion}
 Your conclusion text here.
 
