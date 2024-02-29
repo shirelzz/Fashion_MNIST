@@ -4,7 +4,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{mdframed}
 
+\definecolor{light-gray}{gray}{0.95}
+\newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
 % \geometry{margin=1.5in}
 
 \title{Deep Learning and Natural Language Processing Project}
@@ -35,12 +39,15 @@ Mathematically, given an input vector ${x}$, softmax regression computes the pro
 $${P(y=i | x) = \frac{e^{x^{T} \cdot W_i + b_i}}{\sum_{j=1}^{k} e^{x^{T} \cdot W_j + b_j}}
 }$$
 
-\hbox{Where:}
-\hbox{y: target variable (class)}
-\hbox{x: vector of input features}
-\hbox{T: denotes the transpose applied to the vector}
-\hbox{${W_i}$: the weight vector associated with class ${i}$}
-\hbox{${b_i}$: the bias term associated with class ${i}$}  \hfill\newline
+\noindent\hspace*{10mm}
+\begin{minipage}{\dimexpr\linewidth-20mm}
+Where:\\
+${y}$ is the target variable (class).\\
+${x}$ is the vector of input features.\\
+${T}$ denotes the transpose applied to the vector.\\
+${W_i}$: the weight vector associated with class ${i}$.\\
+${b_i}$: the bias term associated with class ${i}$.\\
+\end{minipage}\\
 \textbf{Understanding The Process:}\hfill\newline\\
 Linear Transformation: For each class, it computes a linear combination of the input features using class-specific weights. This generates a score for each class, indicating its "fit" for the data point.\hfill\newline\\
 Softmax Function: This function takes the vector of scores and transforms them into probabilities. It ensures:
@@ -56,8 +63,7 @@ The softmax function is often used as the final activation layer in multi-class 
 Activation functions are mathematical functions used to determine the output of a neuron, influencing how information flows through the network and ultimately shaping its learning and decision-making capabilities.\\\\
 Traditional neural networks without activation functions would simply perform linear transformations on the input data. This limitation restricts them from learning complex patterns and relationships in the data, hindering their ability to perform tasks like image recognition or natural language processing.\\\\
 A neuron in a neural network receives multiple inputs, each carrying a specific value. These inputs are combined through weighted connections and then passed through an activation function. The function acts like a filter, transforming the combined input into a single output value. This output value then becomes the basis for the neuron's activation, influencing the signals it transmits to other neurons in the network.\\\\
-The selection of an appropriate activation function depends on the specific task and network architecture. While ReLU and Leaky ReLU are popular choices due to their efficiency, other functions like sigmoid and tanh might be suitable for specific scenarios like output normalization or recurrent neural networks.\newline
-
+The selection of an appropriate activation function depends on the specific task and network architecture. While ReLU and Leaky ReLU are popular choices due to their efficiency, other functions like sigmoid and tanh might be suitable for specific scenarios like output normalization or recurrent neural networks.\newline\newline
 \textbf{Popular Activation Functions:}\hfill\newline\\
 
 \begin{itemize}
@@ -99,11 +105,32 @@ These layers function similarly to traditional neural networks, connecting all n
 Optimizers are used for updating the model's parameters to minimize the loss function during the training process, which ultimately leads to better performance of the model.
 
 \subsubsection{Stochastic Gradient Descent (SGD)}
-The SGD algorithm takes a single data point (or a small batch) at a time, calculates the gradient (the direction of steepest descent in the loss function), and updates the model's parameters in the opposite direction by a small learning rate. This technique is computationally inexpensive, making it suitable for large datasets. But on the other hand it may require many iterations to reach an optimal solution, especially for complex models and datasets. The update rule for SGD can be represented as:
+The SGD algorithm takes a single data point (or a small batch) at a time, calculates the gradient (the direction of steepest descent in the loss function), and updates the model's parameters in the opposite direction by a small learning rate. This technique is computationally inexpensive, making it suitable for large datasets. But on the other hand it may require many iterations to reach an optimal solution, especially for complex models and datasets.\\
+The update rule for SGD can be represented as:
 $${\theta_{t+1} = \theta_t - \eta \cdot \nabla L(\theta_t)}$$
 
+\noindent\hspace*{10mm}
+\begin{minipage}{\dimexpr\linewidth-20mm}
+Where:\\
+${\theta_t}$ is the current parameter values.\\
+${\eta}$ is the learning rate, a small positive scalar determining the step size.\\
+${\nabla L(\theta_t)}$ is the gradient of the function ${L}$ at ${\theta_t}$, which points in the direction of the steepest increase in ${L}$.
+\end{minipage}
 
+\subsubsection{Momentum SGD}
+SGD with Momentum is used to improve the performance of the neural network. accelerates convergence, especially in the context of high curvature, small but consistent gradients, or noisy gradients. It does this by adding a fraction ${\gamma}$ of the update vector of the past time step to the current update.\\
+The update rule for Momentum SGD is:
+\begin{align*}
+v_{t} & = \gamma \cdot v_{t-1} + \eta \nabla L(\theta_t)\\
+\theta_{t+1} & = \theta_t - v_{t}
+\end{align*}
 
+\noindent\hspace*{10mm}
+\begin{minipage}{\dimexpr\linewidth-20mm}
+Where:\\
+$v_{t}$ is the velocity at time step ${t}$, which is a combination of the current gradient and the velocity from the previous step $v_{t-1}$.\\
+${\gamma}$ (often set between 0.9 and 0.99) is the momentum term, determining how much of the past velocity to add to the current step.
+\end{minipage}
 
 \subsubsection{RMSprop (Root Mean Square Propagation)}
 RMSprop addresses a limitation of SGD, where frequent updates based on noisy gradients can lead to slow convergence.
@@ -163,16 +190,43 @@ Your project description text here.
 
 \section{Code}
 \subsection{CNN Model}
-    The CNN architecture defined in this function follows a common pattern used for image classification tasks.
-    It starts with convolutional layers that learn low-level features such as edges and textures.
-    As the network deepens, subsequent layers learn increasingly complex and abstract features.
-    Max pooling layers help in reducing spatial dimensions while retaining important features.
-    Finally, the flattened feature vectors are fed into fully connected layers for classification.
-    The use of ReLU activation functions helps in introducing non-linearity,
-    and the softmax activation in the output layer enables the model to output class probabilities,
-    making it suitable for multi-class classification tasks.
-    Overall, this CNN architecture efficiently learns hierarchical representations from image data,
-    enabling accurate classification.
+\code{trainCNNModel}
+\newline
+\newline
+Convolutional Layers: These layers apply a convolution operation to the input image,
+extracting various features through filters.
+The activation function used is ReLU,
+which introduces non-linearity into the model, enabling it to learn complex patterns.\\\newline
+Batch Normalization: This technique is used to improve the training stability and speed
+by normalizing the inputs of each layer.\\\newline
+MaxPooling Layers: Max pooling reduces the spatial dimensions of the feature maps,
+effectively downsampling the input.
+It retains the most important features while reducing computational
+complexity and preventing overfitting.\\\newline
+Flatten Layer: This layer flattens the 2D feature maps into a 1D vector,
+preparing the data for input into a fully connected neural network.\\\newline
+Dense Layers: Fully connected layers that perform classification based on the learned features.
+The first dense layer has 64 units with ReLU activation, enabling the network to learn complex
+patterns in the flattened feature vectors.
+The final dense layer has units equal to the number of classes
+in the dataset, with softmax activation, which outputs probabilities for each class,
+indicating the likelihood of the input image belonging to each class.\\\newline
+Dropout: This layer was added to prevent overfitting.
+It works by randomly setting a fraction of input units to zero during training,
+which helps to prevent the network from relying too much on specific neurons
+and encourages it to learn more robust features.
+We've defined a Dropout layer with a dropout rate of 0.2.
+This means during training, ${20\%}$ of the input units to the Dropout layer will be randomly set to zero.
+
+\textbf{Code}\hfill\newline\\
+
+\code{def createCNNModel(inputShape, numClasses):}\newline
+
+
+\code{2nd func:}\newline
+
+earlystopping
+
 
 \section{Conclusion}
 Your conclusion text here.
