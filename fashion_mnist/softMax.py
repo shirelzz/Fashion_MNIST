@@ -59,6 +59,6 @@ def train_softmax_model(X_train, y_train, X_test, y_test, num_classes):
     # Display the training history
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
     plt.title('Soft max Training History, epochs: ' + str(epochs))
-    plt.show()
     plt.savefig("imgFolder/softMax_fig")
+    plt.show()
     return model
