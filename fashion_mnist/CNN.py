@@ -104,8 +104,8 @@ def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
     # Display the training history
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
     plt.title('CNN Training History \n epoch: ' + str(stop))
-    plt.show()
     plt.savefig("imgFolder/CNN_fig")
+    plt.show()
 
     return model
 
