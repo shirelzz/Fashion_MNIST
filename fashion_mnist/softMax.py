@@ -49,17 +49,16 @@ def train_softmax_model(X_train, y_train, X_test, y_test, num_classes):
     model.compile(optimizer='adam',
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
-
-    # Train the model
     epochs = 20
-    model_history = model.fit(X_train, y_train,
-                              epochs=epochs,
+    # Train the model
+    model_history = model.fit(X_train, y_train, 
+                              epochs= epochs,
                               batch_size=32,
                               validation_data=(X_test, y_test))
 
     # Display the training history
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
-    plt.title('Softmax Training History \n epoch: ' + str(epochs))
+    plt.title('Soft max Training History, epochs: ' + str(epochs))
     plt.show()
-
+    plt.savefig("imgFolder/softMax_fig")
     return model
