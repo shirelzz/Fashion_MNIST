@@ -2,17 +2,17 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage{pifont}
 \usepackage[utf8]{inputenc}
-\usepackage{geometry}
 \usepackage{amsmath}
-\usepackage{float} % For specifying figure positioning
 \usepackage{listings}
 
-\geometry{margin=1.5in}
 \usepackage{xcolor}
 \usepackage{mdframed}
 
 \definecolor{light-gray}{gray}{0.95}
 \newcommand{\code}[1]{\colorbox{light-gray}{\texttt{#1}}}
+\usepackage{float} % For specifying figure positioning
+\usepackage{geometry}
+\geometry{margin=1in}
 % \geometry{margin=1.5in}
 
 \title{Deep Learning and Natural Language Processing Project}
@@ -76,7 +76,7 @@ Activation functions are mathematical functions used to determine the output of 
 Traditional neural networks without activation functions would simply perform linear transformations on the input data. This limitation restricts them from learning complex patterns and relationships in the data, hindering their ability to perform tasks like image recognition or natural language processing.\\\\
 A neuron in a neural network receives multiple inputs, each carrying a specific value. These inputs are combined through weighted connections and then passed through an activation function. The function acts like a filter, transforming the combined input into a single output value. This output value then becomes the basis for the neuron's activation, influencing the signals it transmits to other neurons in the network.\\\\
 The selection of an appropriate activation function depends on the specific task and network architecture. While ReLU and Leaky ReLU are popular choices due to their efficiency, other functions like sigmoid and tanh might be suitable for specific scenarios like output normalization or recurrent neural networks.\newline\newline
-\textbf{Popular Activation Functions:}\hfill\newline\\
+\textbf{Popular Activation Functions:}\hfill\newline
 
 \begin{itemize}
     \item[\ding{118}] Rectified Linear Unit:
@@ -97,6 +97,7 @@ The selection of an appropriate activation function depends on the specific task
     \item[\ding{118}] Tanh (Hyperbolic tangent):
           Similar to sigmoid, tanh maps the input values to a range of -1 to 1. It offers slightly better gradients than sigmoid but suffers from similar limitations.
 \end{itemize}
+\newpage
 
 \subsection{Simple Neural Networks}
 A simple neural network consists of interconnected neurons organized in layers. Each neuron calculates a weighted sum of its inputs, applies an activation function and passes the result on to the next layer.
@@ -319,7 +320,7 @@ All the data of the epochs can be shown in a graph that shows the loss function 
     \centering
     \includegraphics[width=10cm]{imgFolder/softMax_fig.png}
 \end{figure}
-
+\newpage
 
 \subsubsection{CNN:}
 A regularized type of feed-forward neural network that learns feature engineering by itself via filters (or kernel) optimization.
@@ -389,7 +390,22 @@ All the data of the epochs can be shown in a graph that shows the loss function 
     \centering
     \includegraphics[width=10cm]{imgFolder/SimpleNeuralNetwork_fig.png}
 \end{figure}
+\subsection{Comparing Between Models}
+\begin{figure}[H]
+    \caption{Comparing accuracy score between models: }
+    \centering
+    \includegraphics[width=10cm]{imgFolder/accurateFuncComparison.png}
+\end{figure}
+\begin{figure}[H]
+    \caption{Comparing loss function between models:}
+    \centering
+    \includegraphics[width=10cm]{imgFolder/lossFuncComparison.png}
+\end{figure}
+
+The comparison shows that the CNN model has the lowest loss function and the highest accuracy among the evaluated models, indicating its superior performance.
+
 \newpage
+
 \section{Project Description}
 
 The optimal model architecture determined in this study is a Convolutional Neural Network (CNN) with the following specifications:
@@ -466,7 +482,7 @@ The result obtained by this CNN architecture is the lowest loss function and the
 The results:
 \begin{enumerate}
     \item \textbf{Accuracy: } 91\%
-        
+
     \item \textbf{Loss Function: } 0.25\%
 
 \end{enumerate}
@@ -476,76 +492,115 @@ The results:
 
 \subsection{Softmax Regression Model}
 
-% \begin{figure}[h]
-% \caption{Training history of the data}
-% \centering
-% \includegraphics[width=8cm]{softmaxResults/Figure_softmax.png}
-% \end{figure}
+\begin{figure}[H]
+    \caption{Training history of the data}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/softMax_fig.png}
+\end{figure}
 
-% \begin{figure}[h]
-% \caption{Output}
-% \centering
-% \includegraphics[width=8cm]{softmaxResults/softmaxOutput.jpg}
-% \end{figure}
+\begin{figure}[H]
+    \caption{Output}
+    \centering
+    \includegraphics[width=6cm]{imgFolder/softMaxResult.png}
+\end{figure}
 
 \subsection{Simple Neural Network Model}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{Training history of the data}
     \centering
-    \includegraphics[width=10cm]{imgFolder/simpleNeuralNetwork_fig.png}
+    \includegraphics[width=8cm]{imgFolder/simpleNeuralNetwork_fig.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \caption{Output}
     \centering
-    \includegraphics[width=8cm]{imgFolder/simpleNeuralNetworkResult.png}
+    \includegraphics[width=6cm]{imgFolder/simpleNeuralNetworkResult.png}
 \end{figure}
 
 \subsection{Convolutional Neural Network Model}
+\begin{figure}[H]
+    \caption{Training history of the data}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/CNN_fig.png}
+\end{figure}
 
-% \begin{figure}[h]
-% \caption{Training history of the data}
-% \centering
-% \includegraphics[width=8cm]{CNNReults/Figure_1.png}
-% \end{figure}
-
-% \begin{figure}[h]
-% \caption{Output}
-% \centering
-% \includegraphics[width=8cm]{CNNReults/CNNoutput.jpg}
-% \end{figure}
+\begin{figure}[H]
+    \caption{Output}
+    \centering
+    \includegraphics[width=6cm]{imgFolder/CNNResult.png}
+\end{figure}
 
 \newpage
 \section{Code}
 \subsection{Softmax Regression}
 softMax.py implements softmax regression, a technique for multi-class classification tasks, using TensorFlow's Keras API. It comprises two functions: create-softmax-model and train-softmax-model. The former constructs a softmax regression model with a single Dense layer, which outputs class probabilities for input images. The latter function trains the model using the specified training and test data, employing the Adam optimizer and sparse categorical cross-entropy loss. The training process is visualized through a plot showcasing the model's training history (as we saw in figure 1), including loss and accuracy metrics over epochs.
 
-% \begin{figure}[h]
-% \caption{Creation of the Softmax model}
-% \centering
-% \includegraphics[width=8cm]{softmaxResults/createModelSoftmax.jpg}
-% \end{figure}
+\begin{figure}[H]
+\caption{Creation of the Softmax model}
+\centering
+\includegraphics[width=8cm]{imgFolder/create_softmax_model.png}
+\end{figure}
 
-% \begin{figure}[h]
-% \caption{Training of the Softmax model}
-% \centering
-% \includegraphics[width=8cm]{softmaxResults/trainSoftmax.jpg}
-% \end{figure}
+\begin{figure}[H]
+\caption{Training of the Softmax model}
+\centering
+\includegraphics[width=8cm]{imgFolder/train_softmax_model.png}
+\end{figure}
 
 \newpage
 \subsection{Simple Neural Network Model}
+SimpleNeuralNetwork.py code implements a Simple Neural Network using TensorFlow's Keras API for image classification tasks.
+It consists of three functions: split-validation, create-neural-network and train-neural-network.
+The first split the data into, train, test and validation. The second, constructs a simple neural network model with multiple dense layers, along with batch normalization and dropout for regularization. The last function prepares the training and test datasets, compiles and trains the simple neural network model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 10). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
+\code{split-validation:}\\\newline
+Splits the training data into training and validation sets.
+The function takes two parameters: X-train, which represents the features (input data) of the training set, and y-train, which represents the corresponding labels (output data) of the training set.
+It split the training data into training and validation value of size 10\%.
+It return the x-train, y-train, x-validation, y-validation after splitting it.
 
+\code{create-neural-network:}\\\newline
+\begin{figure}[H]
+    \caption{Creation of simple neural network model}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/create-neural-network-code.png}
+\end{figure}
+
+Flatten Layer: This layer flattens the 2D feature maps into a 1D vector,
+preparing the data for input into a fully connected neural network.\\\newline
+Dense Layers: Fully connected layers that perform classification based on the learned features.
+The first dense layer has 300 units with relu activation, enabling the network to learn complex
+patterns in the flattened feature vectors.
+The second dense layer has 128 units with relu activation, enabling the network to learn complex
+patterns in the flattened feature vectors.
+The final dense layer has units equal to the number of classes
+in the dataset, with softmax activation, which outputs probabilities for each class,
+indicating the likelihood of the input image belonging to each class.\\\newline
+
+\code{train-neural-network:}
+\\\newline
+\begin{figure}[H]
+    \caption{Creation of simple neural network model}
+    \centering
+    \includegraphics[width=8cm]{imgFolder/train_neural_network-code.png}
+\end{figure}
+This function prepares the training and test datasets by reshaping them into the format
+required for Simple neural network input, constructs the simple neural network model by calling the `create-neural-network` function,
+compiles the model and trains the model using the provided training data.
+We used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
+trying to avoid overfitting.
+The training process's history is plotted, showing metrics evolution over epochs.
 \newpage
+
 \subsection{CNN Model}
-CNN.py code implements a Convolutional Neural Network (CNN) using TensorFlow's Keras API for image classification tasks. It consists of two functions: create-cnn-model and train-cnn-model. The former constructs a CNN model with multiple convolutional and dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the CNN model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 5). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
+CNN.py code implements a Convolutional Neural Network (CNN) using TensorFlow's Keras API for image classification tasks. It consists of two functions: create-cnn-model and train-cnn-model. The former constructs a CNN model with multiple convolutional and dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the CNN model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 14). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
 \code{create-cnn-model:}
 
-% \begin{figure}[h]
-% \caption{Creation of the CNN model}
-% \centering
-% \includegraphics[width=8cm]{CNNReults/createCNNModel.jpg}
-% \end{figure}
+\begin{figure}[H]
+\caption{Creation of the CNN model}
+\centering
+\includegraphics[width=8cm]{imgFolder/create_cnn_model.png}
+\end{figure}
 \text{ }\\
 Convolutional Layers: These layers apply a convolution operation to the input image,
 extracting various features through filters.
@@ -571,23 +626,20 @@ which helps to prevent the network from relying too much on specific neurons
 and encourages it to learn more robust features.
 We've defined a Dropout layer with a dropout rate of 0.2.
 This means during training, ${20\%}$ of the input units to the Dropout layer will be randomly set to zero.\\\newline
+
 \code{train-cnn-model:}\\\newline
 This function prepares the training and test datasets by reshaping them into the format
 required for CNN input, constructs the CNN model by calling the `create-cnn-model` function,
 compiles the model and trains the model using the provided training data.
-I used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
+We used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
 trying to avoid overfitting.
-The training process's history is plotted, showing metrics evolution over epochs.\\
-
-% \begin{figure}[h]
-% \caption{Training of the CNN model}
-% \centering
-% \includegraphics[width=8cm]{CNNReults/trainCNN.jpg}
-% \end{figure}
-
-
-\newpage
+The training process's history is plotted, showing metrics evolution over epochs.
+\begin{figure}[H]
+\caption{Training of the CNN model}
+\centering
+\includegraphics[width=8cm]{imgFolder/train_cnn_model.png}
+\end{figure}
+% \newpage
 \section{Conclusion}
-Your conclusion text here.
-
+In this study, various machine learning models were evaluated for the classification of fashion items using the Fashion-MNIST dataset. Comparison of traditional algorithms like Logistic Regression and Multi-Layer Perceptron with advanced techniques such as Softmax Regression, Convolutional Neural Networks (CNNs), and Simple Neural Networks revealed that the CNN architecture consistently outperformed others in accuracy and loss reduction. Through systematic exploration of hyperparameters, the optimized CNN model demonstrated superior performance, highlighting the efficacy of deep learning techniques for image classification tasks. These findings contribute valuable insights for applications in e-commerce, retail, and computer vision domains.
 \end{document}
