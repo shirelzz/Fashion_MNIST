@@ -16,7 +16,8 @@
 % \geometry{margin=1.5in}
 
 \title{Deep Learning and Natural Language Processing Project}
-\author{Moria Grohar, Shirel Zecharia}
+\author{Moria Grohar - 323082024\\
+Shirel Zecharia - 211551072}
 \date{\today}
 
 \begin{document}
@@ -26,9 +27,9 @@
 \newpage
 
 \section{Abstract}
-In this report, we present a study on implementing a neural network model for the classification of fashion items using the Fashion MNIST dataset.\\
-We compare the performance of the neural network approach with traditional machine learning algorithms such as Logistic Regression, and Multi-Layer Perceptron (MLP).\\
-The report discusses the project methodology, experimental results, and conclusions drawn from the comparison.
+The report presents a study on the implementation of a neural network model for the classification of fashion items using the Fashion MNIST dataset.\\
+The performance of the neural network approach is compared with traditional machine learning algorithms such as softmax regression and multi-layer perceptron (MLP).\\
+The report discusses the project methodology, the experimental results and the conclusions drawn from the comparison.
 
 \section{Introduction}
 This report explores the performance of various machine learning models for classifying fashion items from the well-known Fashion-MNIST dataset. This dataset consists of grayscale images of various clothing articles, each belonging to a specific category such as T-shirts, trousers, and shoes. The task of classifying these images is considered a classification problem.\\
@@ -64,8 +65,7 @@ Softmax Function: This function takes the vector of scores and transforms them i
 \begin{itemize}
     \item Normalization: The sum of all probabilities for a single data point is always 1, representing a valid probability distribution.
 \end{itemize}
-The softmax function is often used as the final activation layer in multi-class neural networks as we will discuss later in the article.
-
+The softmax function serves as a common choice for the final activation layer in multi-class neural networks, as detailed later in the article.
 \subsection{Activation Functions}
 Activation functions are mathematical functions used to determine the output of a neuron, influencing how information flows through the network and ultimately shaping its learning and decision-making capabilities.\\\\
 Traditional neural networks without activation functions would simply perform linear transformations on the input data. This limitation restricts them from learning complex patterns and relationships in the data, hindering their ability to perform tasks like image recognition or natural language processing.\\\\
@@ -211,41 +211,25 @@ Model Selection and Evaluation:\\
 The project explored the performance of various models for predicting flight ticket prices in a dataset containing information on bookings between major Indian cities. The target variable was the "Price" column, indicating a continuous value. Therefore, the problem was classified as a regression task.\\
 The data was split into train and test sets for model evaluation. Several models were implemented and compared based on their performance in reducing the mean squared error (MSE), which served as the loss function.\\\newline
 \textbf{Model Performances:}\\
-
-\subsubsection{Dummy Model:}
-This baseline model adopted a simple mean strategy, resulting in high loss values.
-\begin{figure}[H]
-    \caption{Dummy model flight result:}
-    \centering
-    \includegraphics[width=8cm]{imgFolder/dummyModelFlight.png}
-\end{figure}
-
 \subsubsection{Linear Regression: }Compared to the dummy model, linear regression showed improvement but still yielded significant loss.
 \begin{figure}[H]
     \caption{Linear Regression model flight result:}
     \centering
-    \includegraphics[width=8cm]{imgFolder/linearRegressionFlight.png}
-\end{figure}
-
-\subsubsection{Ridge Regression: }A slight reduction in loss compared to linear regression was observed, but the values remained high.
-\begin{figure}[H]
-    \caption{Ridge Regression model flight result:}
-    \centering
-    \includegraphics[width=8cm]{imgFolder/ridgeRegressionFlight.png}
+    \includegraphics[width=6cm]{../imgFolder/linearRegressionFlight.png}
 \end{figure}
 
 \subsubsection{Random Forest: }This model achieved a more significant reduction in loss compared to prior models, although the value remained high.
 \begin{figure}[H]
     \caption{Random Forest model flight result:}
     \centering
-    \includegraphics[width=8cm]{imgFolder/randomForestFlight.png}
+    \includegraphics[width=6cm]{../imgFolder/randomForestFlight.png}
 \end{figure}
 
 \subsubsection{Linear Regression with TensorFlow: }Implementing linear regression using TensorFlow did not improve performance and even resulted in higher loss compared to the basic implementation.
 \begin{figure}[H]
     \caption{Linear Regression with TensorFlow model flight result:}
     \centering
-    \includegraphics[width=8cm]{imgFolder/linearRegressionTensorflowFlight.png}
+    \includegraphics[width=6cm]{../imgFolder/linearRegressionTensorflowFlight.png}
 \end{figure}
 
 \subsubsection{Neural Network Exploration:}
@@ -254,82 +238,37 @@ This baseline model adopted a simple mean strategy, resulting in high loss value
     A neural network model with 2 hidden layers and 80 hidden units was constructed using TensorFlow. Hyperparameter tuning involved adjusting the learning rate and number of epochs, ultimately leading to the configuration with the lowest observed loss.
     \caption{neural network model flight result:}
     \centering
-    \includegraphics[width=8cm]{imgFolder/neuronNetworkFlight.png}
+    \includegraphics[width=6cm]{../imgFolder/neuronNetworkFlight.png}
 \end{figure}
 
 \subsubsection{Comparison and Conclusion:}
 \begin{figure}[H]
     \caption{comparison model flight result:}
     \centering
-    \includegraphics[width=8cm]{imgFolder/comparisonFlight.png}
+    \includegraphics[width=8cm]{../imgFolder/comparisonFlight.png}
 \end{figure}
-While the neural network achieved competitive results compared to simpler models after hyperparameter adjustments, the random forest remained the best performing model based on the achieved loss values.
-
-\subsection{Second Attempts with Fashion-MNIST data (our data)}
+While the neural network achieved competitive results compared to simpler models after hyperparameter adjustments, the random forest remained the best performing model based on the achieved loss values.\\\newline
+\textbf{The decision to change the dataset stemmed from its perceived lack of complexity, which prevented us from improving the results with advanced models such as RNN, CNN or attention mechanism to achieve optimal accuracy and loss function improvement:}
+\newpage
+\subsection{Second Attempts with Fashion-MNIST data}
 \textbf{Model Selection and Evaluation:}\\
 The project explored the performance of various models for classification of a picture of cloth to a various category. Therefore, the problem was classified as a classification task.\\
 The data was split into train and test sets for model evaluation, in some models also to validation. Several models were implemented and compared based on their performance in reducing the loss function.\\\newline
 \textbf{Approach:}\\
-In this study, the waterfall approach is adopted, characterized by systematically running the model with predefined epochs and various parameters governing the model's architecture, such as the number of layers in the neural network and other relevant factors. This method aims to systematically explore the model's performance across different configurations and settings.\\
-\textbf{Model Performances:}\\
-
+In this study, the waterfall approach is adopted, characterized by systematically running the model with predefined epochs and various parameters governing the model's architecture, such as the number of layers in the neural network and other relevant factors. This method aims to systematically explore the model's performance across different configurations and settings.\\\newline
+\textbf{Model Performances:}
 \subsubsection{Soft max:}
-In an attempt to optimize the performance of the model we tried different number of epochs, optimizers and loss functions. We were able to get from ${79\%}$ to ${85\%}$.\\
+In an attempt to optimize the performance of the model we tried different number of epochs, optimizers and loss functions. We were able to get better accuracy, from ${79\%}$ we reached ${85\%}$).\\
 
 \subsubsection{Simple Neural Network:}
-A group of interconnected units called neurons that send signals to one another. Neurons can be either biological cells or mathematical models. While individual neurons are simple, many of them together in a network can perform complex tasks.In an effort to optimize the performance of the model, various hyperparameters were explored.
-The number of epochs controlling the training iterations was adjusted. Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated.
-The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
-
-The accuracy calculation process:
-
-\begin{figure}[H]
-    \caption{Running the model:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/RunningSimpleNeuralNetwork.png}
-\end{figure}
-
-The result of the run:
-\begin{figure}[H]
-    \caption{Result:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/simpleNeuralNetworkResult.png}
-\end{figure}
-
-The classification report in concentrated form:
-\begin{figure}[H]
-    \caption{Classification Report:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/classificationReportSimpleNeuralNetwork.png}
-\end{figure}
-
-All the data of the epochs can be shown in a graph that shows the loss function and the accuracy in every run.
-\begin{figure}[H]
-    \caption{Simple Neural Network training history:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/SimpleNeuralNetwork_fig.png}
-\end{figure}
+In order to optimize the performance of the model, various hyperparameters were explored such as normalization of the data, different size of the kernel, number of epochs, optimizers, loss functions, etc.
+The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy. We were able to reach from accuracy of ${87\%}$ to $(89\%)$ and loss function from ${36\%}$ to ${31\%}$.\\
 
 \subsubsection{CNN:}
-In an effort to optimize the performance of the model, various hyperparameters were explored such as normalization of the data, different size of the kernel, number of epochs, optimizers, loss functions, etc.
-The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy. We were able to reach from ${87\%}$ to $(91\%)$.\\
-
-\subsection{Comparing Between Models}
-\begin{figure}[H]
-    \caption{Comparing accuracy score between models: }
-    \centering
-    \includegraphics[width=10cm]{imgFolder/accurateFuncComparison.png}
-\end{figure}
-\begin{figure}[H]
-    \caption{Comparing loss function between models:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/lossFuncComparison.png}
-\end{figure}
-
-The comparison shows that the CNN model has the lowest loss function and the highest accuracy among the evaluated models, indicating its superior performance.
+In an effort to optimize the performance of the model, we explored hyperparameters such as different size of the kernel, number of epochs, optimizers, loss functions. Also  we normalized the data between convolutional layers.
+The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy. We were able to reach from ${87\%}$ accuracy to $(92\%)$ accuracy, and from ${33\%}$ loss to ${24\%}$ loss.\\
 
 \newpage
-
 \section{Project Description}
 
 The optimal model architecture determined in this study is a Convolutional Neural Network (CNN) with the following specifications:
@@ -405,89 +344,92 @@ The optimal model architecture determined in this study is a Convolutional Neura
 The result obtained by this CNN architecture is the lowest loss function and the highest accuracy among the models evaluated in the study.
 The results:
 \begin{enumerate}
-    \item \textbf{Accuracy: } 91\%
+    \item \textbf{Accuracy: } 92\%
 
-    \item \textbf{Loss Function: } 0.25\%
+    \item \textbf{Loss Function: } 0.24\%
 
 \end{enumerate}
 
 \newpage
 \section{Simulation Results}
-
 \subsection{Softmax Regression Model}
-
 \begin{figure}[H]
     \caption{Training history of the data}
     \centering
-    \includegraphics[width=8cm]{imgFolder/softMax_fig.png}
+    \includegraphics[width=8cm]{../imgFolder/softMax_fig.png}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Output}
     \centering
-    \includegraphics[width=6cm]{imgFolder/softMaxResult.png}
+    \includegraphics[width=6cm]{../imgFolder/softMaxResult.png}
 \end{figure}
-
 \subsection{Simple Neural Network Model}
 
 \begin{figure}[H]
     \caption{Training history of the data}
     \centering
-    \includegraphics[width=8cm]{imgFolder/simpleNeuralNetwork_fig.png}
+    \includegraphics[width=8cm]{../imgFolder/simpleNeuralNetwork_fig.png}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Output}
     \centering
-    \includegraphics[width=6cm]{imgFolder/simpleNeuralNetworkResult.png}
+    \includegraphics[width=6cm]{../imgFolder/simpleNeuralNetworkResult.png}
 \end{figure}
-
 \subsection{Convolutional Neural Network Model}
 \begin{figure}[H]
     \caption{Training history of the data}
     \centering
-    \includegraphics[width=8cm]{imgFolder/CNN_fig.png}
+    \includegraphics[width=8cm]{../imgFolder/CNN_fig.png}
 \end{figure}
 
 \begin{figure}[H]
     \caption{Output}
     \centering
-    \includegraphics[width=6cm]{imgFolder/CNNResult.png}
+    \includegraphics[width=6cm]{../imgFolder/CNNResult.png}
+\end{figure}
+\subsection{Comparing Between Models}
+\begin{figure}[H]
+    \caption{Comparing accuracy score between models: }
+    \centering
+    \includegraphics[width=10cm]{../imgFolder/accurateFuncComparison.png}
+\end{figure}
+\begin{figure}[H]
+    \caption{Comparing loss function between models:}
+    \centering
+    \includegraphics[width=10cm]{../imgFolder/lossFuncComparison.png}
 \end{figure}
 
+The comparison shows that the CNN model has the lowest loss function and the highest accuracy among the evaluated models, indicating its superior performance.
 \newpage
 \section{Code}
 \subsection{Softmax Regression}
-softMax.py implements softmax regression, a technique for multi-class classification tasks, using TensorFlow's Keras API. It comprises two functions: create-softmax-model and train-softmax-model. The former constructs a softmax regression model with a single Dense layer, which outputs class probabilities for input images. The latter function trains the model using the specified training and test data, employing the Adam optimizer and sparse categorical cross-entropy loss. The training process is visualized through a plot showcasing the model's training history (as we saw in figure 1), including loss and accuracy metrics over epochs.
+softMax.py implements softmax regression, a technique for multi-class classification tasks, using TensorFlow's Keras API. It comprises two functions: create-softmax-model and train-softmax-model. The former constructs a softmax regression model with a single Dense layer, which outputs class probabilities for input images. The latter function trains the model using the specified training and test data, employing the Adam optimizer and sparse categorical cross-entropy loss. The training process is visualized through a plot showcasing the model's training history (figure 7), including loss and accuracy metrics over epochs.
 
 \begin{figure}[H]
-\caption{Creation of the Softmax model}
-\centering
-\includegraphics[width=8cm]{imgFolder/create_softmax_model.png}
+    \caption{Creation of the Softmax model}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/create_softmax_model.png}
 \end{figure}
 
 \begin{figure}[H]
-\caption{Training of the Softmax model}
-\centering
-\includegraphics[width=8cm]{imgFolder/train_softmax_model.png}
+    \caption{Training of the Softmax model}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/train_softmax_model.png}
 \end{figure}
 
 \newpage
 \subsection{Simple Neural Network Model}
 SimpleNeuralNetwork.py code implements a Simple Neural Network using TensorFlow's Keras API for image classification tasks.
-It consists of three functions: split-validation, create-neural-network and train-neural-network.
-The first split the data into, train, test and validation. The second, constructs a simple neural network model with multiple dense layers, along with batch normalization and dropout for regularization. The last function prepares the training and test datasets, compiles and trains the simple neural network model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 10). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
-\code{split-validation:}\\\newline
-Splits the training data into training and validation sets.
-The function takes two parameters: X-train, which represents the features (input data) of the training set, and y-train, which represents the corresponding labels (output data) of the training set.
-It split the training data into training and validation value of size 10\%.
-It return the x-train, y-train, x-validation, y-validation after splitting it.
+It consists of two functions: create-neural-network and train-neural-network.
+The former, constructs a simple neural network model with multiple dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the simple neural network model, and visualizes the training history, showcasing metrics evolution over epochs (figure 9). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
 
 \code{create-neural-network:}\\\newline
 \begin{figure}[H]
     \caption{Creation of simple neural network model}
     \centering
-    \includegraphics[width=8cm]{imgFolder/create-neural-network-code.png}
+    \includegraphics[width=8cm]{../imgFolder/create-neural-network-code.png}
 \end{figure}
 
 Flatten Layer: This layer flattens the 2D feature maps into a 1D vector,
@@ -506,24 +448,19 @@ indicating the likelihood of the input image belonging to each class.\\\newline
 \begin{figure}[H]
     \caption{Creation of simple neural network model}
     \centering
-    \includegraphics[width=8cm]{imgFolder/train_neural_network-code.png}
+    \includegraphics[width=8cm]{../imgFolder/train_neural_network-code.png}
 \end{figure}
-This function prepares the training and test datasets by reshaping them into the format
-required for Simple neural network input, constructs the simple neural network model by calling the `create-neural-network` function,
-compiles the model and trains the model using the provided training data.
-We used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
-trying to avoid overfitting.
-The training process's history is plotted, showing metrics evolution over epochs.
+The function is responsible for preparing the training and test datasets, reshaping them into the required format for input into the Simple Neural Network. It then constructs the Simple Neural Network model by invoking the create-neural-network function, compiles the model, and proceeds to train it using the provided training data. Early stopping is employed during training to prevent overfitting, halting the process if the validation loss fails to improve for three consecutive epochs. The evolution of metrics over epochs during the training process is visualized through plotting the training history.
 \newpage
 
 \subsection{CNN Model}
-CNN.py code implements a Convolutional Neural Network (CNN) using TensorFlow's Keras API for image classification tasks. It consists of two functions: create-cnn-model and train-cnn-model. The former constructs a CNN model with multiple convolutional and dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the CNN model, and visualizes the training history, showcasing metrics evolution over epochs (as we saw in figure 14). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
+CNN.py code implements a Convolutional Neural Network (CNN) using TensorFlow's Keras API for image classification tasks. It consists of two functions: create-cnn-model and train-cnn-model. The former constructs a CNN model with multiple convolutional and dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the CNN model, and visualizes the training history, showcasing metrics evolution over epochs (figure 11). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
 \code{create-cnn-model:}
 
 \begin{figure}[H]
-\caption{Creation of the CNN model}
-\centering
-\includegraphics[width=8cm]{imgFolder/create_cnn_model.png}
+    \caption{Creation of the CNN model}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/create_cnn_model.png}
 \end{figure}
 \text{ }\\
 Convolutional Layers: These layers apply a convolution operation to the input image,
@@ -548,22 +485,74 @@ Dropout: This layer was added to prevent overfitting.
 It works by randomly setting a fraction of input units to zero during training,
 which helps to prevent the network from relying too much on specific neurons
 and encourages it to learn more robust features.
-We've defined a Dropout layer with a dropout rate of 0.2.
+A Dropout layer has been defined with a dropout rate of 0.2.
 This means during training, ${20\%}$ of the input units to the Dropout layer will be randomly set to zero.\\\newline
 
 \code{train-cnn-model:}\\\newline
 This function prepares the training and test datasets by reshaping them into the format
 required for CNN input, constructs the CNN model by calling the `create-cnn-model` function,
 compiles the model and trains the model using the provided training data.
-We used early stopping to halt training if the validation loss does not improve for three consecutive epochs,
+Early stopping was implemented to cease training if the validation loss failed to improve for three consecutive epochs,
 trying to avoid overfitting.
 The training process's history is plotted, showing metrics evolution over epochs.
 \begin{figure}[H]
-\caption{Training of the CNN model}
-\centering
-\includegraphics[width=8cm]{imgFolder/train_cnn_model.png}
+    \caption{Training of the CNN model}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/train_cnn_model.png}
 \end{figure}
+
+\subsection{Main}
+main.py includes the main function, which implements all the function that run the models an create comparison.
+\code{main}
+\begin{figure}[H]
+    \caption{Main function part 1}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/mainPart1.png}
+\end{figure}
+
+\begin{figure}[H]
+    \caption{Main function part 2}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/mainPart2.png}
+\end{figure}
+
+\subsection{Fashion Mnist}
+fashionMNIST.py includes 3 functions that handles the data: get-data, split-data0, split-data1.
+\code{get-data}\\\newline
+\begin{figure}[H]
+    \caption{Get data function}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/getData.png}
+\end{figure}
+
+\code{split-data0}\\
+Splits the training data into training, testing and validation sets.
+The function takes one parameters: df-shuffled which is a dataframe.
+It split the df-shuffled into training and testing value of size 10\%.
+Then it splits the training data into training and validation value of size 10\%.
+It return the x-train, y-train, x-test, y-test, x-validation, y-validation after splitting it.
+
+\begin{figure}[H]
+    \caption{Split data with validation}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/splitData0.png}
+\end{figure}
+
+\code{split-data1}\\
+Splits the training data into training and testing sets.
+The function takes one parameters: df-shuffled which is a dataframe.
+It split the df-shuffled into training and test value of size 15\%.
+It return the x-train, y-train, x-test, y-test after splitting it.
+\begin{figure}[H]
+    \caption{Split data without validation}
+    \centering
+    \includegraphics[width=8cm]{../imgFolder/splitData1.png}
+\end{figure}
+
 % \newpage
 \section{Conclusion}
-In this study, various machine learning models were evaluated for the classification of fashion items using the Fashion-MNIST dataset. Comparison of traditional algorithms like Logistic Regression and Multi-Layer Perceptron with advanced techniques such as Softmax Regression, Convolutional Neural Networks (CNNs), and Simple Neural Networks revealed that the CNN architecture consistently outperformed others in accuracy and loss reduction. Through systematic exploration of hyperparameters, the optimized CNN model demonstrated superior performance, highlighting the efficacy of deep learning techniques for image classification tasks. These findings contribute valuable insights for applications in e-commerce, retail, and computer vision domains.
+In this study, various machine learning models were evaluated for classifying fashion items using the Fashion-MNIST dataset.
+Comparison of traditional algorithms like Logistic Regression and Multi-Layer Perceptron with advanced techniques such as Softmax Regression, Convolutional Neural Networks (CNNs), and Simple Neural Networks revealed that the CNN architecture consistently outperformed others in accuracy and loss reduction.
+Through systematic exploration of hyperparameters, the optimized CNN model demonstrated superior performance, highlighting the efficacy of deep learning techniques for image classification tasks.
+These findings contribute valuable insights for applications in e-commerce, retail, and computer vision domains.
 \end{document}

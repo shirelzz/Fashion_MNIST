@@ -50,15 +50,17 @@ def train_softmax_model(X_train, y_train, X_test, y_test, num_classes):
                   loss='sparse_categorical_crossentropy',
                   metrics=['accuracy'])
     epochs = 20
+
     # Train the model
     model_history = model.fit(X_train, y_train, 
-                              epochs= epochs,
+                              epochs=epochs,
                               batch_size=32,
                               validation_data=(X_test, y_test))
 
     # Display the training history
     pd.DataFrame(model_history.history).plot(figsize=(8, 5))
-    plt.title('Soft max Training History, epochs: ' + str(epochs))
+    plt.title('Softmax Training History, epochs: ' + str(epochs))
     plt.savefig("imgFolder/softMax_fig")
     plt.show()
+
     return model
