@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  1 MAR 2024 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  2 MAR 2024 22:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -319,20 +319,20 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
  (C:\Users\moria\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count294
@@ -399,7 +399,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 LaTeX Warning: Command \textellipsis invalid in math mode on input line 46.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
@@ -424,300 +424,290 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--66
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--80
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
 [4] [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
-
- []
-
-<imgFolder/dummyModelFlight.png, id=38, 157.08687pt x 46.67438pt>
-File: imgFolder/dummyModelFlight.png Graphic file (type png)
-<use imgFolder/dummyModelFlight.png>
-Package pdftex.def Info: imgFolder/dummyModelFlight.png  used on input line 230.
-(pdftex.def)             Requested size: 227.62204pt x 67.63548pt.
-<imgFolder/linearRegressionFlight.png, id=40, 134.00063pt x 47.17625pt>
+<imgFolder/linearRegressionFlight.png, id=38, 134.00063pt x 47.17625pt>
 File: imgFolder/linearRegressionFlight.png Graphic file (type png)
 <use imgFolder/linearRegressionFlight.png>
-Package pdftex.def Info: imgFolder/linearRegressionFlight.png  used on input line 237.
-(pdftex.def)             Requested size: 227.62204pt x 80.13663pt.
-<imgFolder/ridgeRegressionFlight.png, id=41, 144.03813pt x 45.67062pt>
-File: imgFolder/ridgeRegressionFlight.png Graphic file (type png)
-<use imgFolder/ridgeRegressionFlight.png>
-Package pdftex.def Info: imgFolder/ridgeRegressionFlight.png  used on input line 244.
-(pdftex.def)             Requested size: 227.62204pt x 72.17549pt.
-<imgFolder/randomForestFlight.png, id=42, 128.48pt x 47.67813pt>
+Package pdftex.def Info: imgFolder/linearRegressionFlight.png  used on input line 235.
+(pdftex.def)             Requested size: 170.71652pt x 60.10246pt.
+<imgFolder/randomForestFlight.png, id=40, 128.48pt x 47.67813pt>
 File: imgFolder/randomForestFlight.png Graphic file (type png)
 <use imgFolder/randomForestFlight.png>
-Package pdftex.def Info: imgFolder/randomForestFlight.png  used on input line 251.
-(pdftex.def)             Requested size: 227.62204pt x 84.47609pt.
-[8 <./imgFolder/dummyModelFlight.png> <./imgFolder/linearRegressionFlight.png> <./imgFolder/ridgeRegressionFlight.png>]
-<imgFolder/linearRegressionTensorflowFlight.png, id=49, 137.01187pt x 22.58438pt>
+Package pdftex.def Info: imgFolder/randomForestFlight.png  used on input line 249.
+(pdftex.def)             Requested size: 170.71652pt x 63.35652pt.
+<imgFolder/linearRegressionTensorflowFlight.png, id=41, 137.01187pt x 22.58438pt>
 File: imgFolder/linearRegressionTensorflowFlight.png Graphic file (type png)
 <use imgFolder/linearRegressionTensorflowFlight.png>
-Package pdftex.def Info: imgFolder/linearRegressionTensorflowFlight.png  used on input line 258.
-(pdftex.def)             Requested size: 227.62204pt x 37.5231pt.
-<imgFolder/neuronNetworkFlight.png, id=50, 135.50626pt x 22.58438pt>
+Package pdftex.def Info: imgFolder/linearRegressionTensorflowFlight.png  used on input line 256.
+(pdftex.def)             Requested size: 170.71652pt x 28.14215pt.
+<imgFolder/neuronNetworkFlight.png, id=42, 135.50626pt x 22.58438pt>
 File: imgFolder/neuronNetworkFlight.png Graphic file (type png)
 <use imgFolder/neuronNetworkFlight.png>
-Package pdftex.def Info: imgFolder/neuronNetworkFlight.png  used on input line 267.
-(pdftex.def)             Requested size: 227.62204pt x 37.93835pt.
-<imgFolder/comparisonFlight.png, id=51, 388.95313pt x 215.80624pt>
+Package pdftex.def Info: imgFolder/neuronNetworkFlight.png  used on input line 265.
+(pdftex.def)             Requested size: 170.71652pt x 28.45367pt.
+[8 <./imgFolder/linearRegressionFlight.png> <./imgFolder/randomForestFlight.png> <./imgFolder/linearRegressionTensorflowFlight.png>]
+<imgFolder/comparisonFlight.png, id=49, 388.95313pt x 215.80624pt>
 File: imgFolder/comparisonFlight.png Graphic file (type png)
 <use imgFolder/comparisonFlight.png>
-Package pdftex.def Info: imgFolder/comparisonFlight.png  used on input line 274.
+Package pdftex.def Info: imgFolder/comparisonFlight.png  used on input line 272.
 (pdftex.def)             Requested size: 227.62204pt x 126.29718pt.
- [9 <./imgFolder/randomForestFlight.png> <./imgFolder/linearRegressionTensorflowFlight.png> <./imgFolder/neuronNetworkFlight.png> <./imgFolder/comparisonFlight.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 286--288
+
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
-<imgFolder/RunningSoftMax.png, id=59, 539.01375pt x 380.92313pt>
+[9 <./imgFolder/neuronNetworkFlight.png> <./imgFolder/comparisonFlight.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+<imgFolder/RunningSoftMax.png, id=55, 539.01375pt x 380.92313pt>
 File: imgFolder/RunningSoftMax.png Graphic file (type png)
 <use imgFolder/RunningSoftMax.png>
 Package pdftex.def Info: imgFolder/RunningSoftMax.png  used on input line 301.
 (pdftex.def)             Requested size: 426.79134pt x 301.61763pt.
-<imgFolder/softMaxResult.png, id=60, 142.5325pt x 21.58063pt>
+<imgFolder/softMaxResult.png, id=56, 142.5325pt x 21.58063pt>
 File: imgFolder/softMaxResult.png Graphic file (type png)
 <use imgFolder/softMaxResult.png>
 Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 307.
 (pdftex.def)             Requested size: 284.52756pt x 43.0801pt.
 [10 <./imgFolder/RunningSoftMax.png>]
-<imgFolder/classificationReportSoftmax.png, id=65, 224.33812pt x 158.5925pt>
+<imgFolder/classificationReportSoftmax.png, id=61, 224.33812pt x 158.5925pt>
 File: imgFolder/classificationReportSoftmax.png Graphic file (type png)
 <use imgFolder/classificationReportSoftmax.png>
 Package pdftex.def Info: imgFolder/classificationReportSoftmax.png  used on input line 314.
 (pdftex.def)             Requested size: 284.52756pt x 201.16336pt.
-<imgFolder/softMax_fig.png, id=66, 578.16pt x 361.35pt>
+<imgFolder/softMax_fig.png, id=62, 578.16pt x 361.35pt>
 File: imgFolder/softMax_fig.png Graphic file (type png)
 <use imgFolder/softMax_fig.png>
 Package pdftex.def Info: imgFolder/softMax_fig.png  used on input line 321.
 (pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
  [11 <./imgFolder/softMaxResult.png> <./imgFolder/classificationReportSoftmax.png> <./imgFolder/softMax_fig.png>]
-<imgFolder/RunningCNNModel.png, id=73, 559.08875pt x 185.19188pt>
+<imgFolder/RunningCNNModel.png, id=69, 559.08875pt x 185.19188pt>
 File: imgFolder/RunningCNNModel.png Graphic file (type png)
 <use imgFolder/RunningCNNModel.png>
-Package pdftex.def Info: imgFolder/RunningCNNModel.png  used on input line 336.
+Package pdftex.def Info: imgFolder/RunningCNNModel.png  used on input line 334.
 (pdftex.def)             Requested size: 284.52756pt x 94.24878pt.
-<imgFolder/CNNResult.png, id=74, 144.03813pt x 21.07875pt>
+<imgFolder/CNNResult.png, id=70, 144.03813pt x 21.07875pt>
 File: imgFolder/CNNResult.png Graphic file (type png)
 <use imgFolder/CNNResult.png>
-Package pdftex.def Info: imgFolder/CNNResult.png  used on input line 343.
+Package pdftex.def Info: imgFolder/CNNResult.png  used on input line 340.
 (pdftex.def)             Requested size: 284.52756pt x 41.63983pt.
-<imgFolder/classificationReportCNN.png, id=75, 225.84375pt x 158.09062pt>
+<imgFolder/classificationReportCNN.png, id=71, 225.84375pt x 158.09062pt>
 File: imgFolder/classificationReportCNN.png Graphic file (type png)
 <use imgFolder/classificationReportCNN.png>
-Package pdftex.def Info: imgFolder/classificationReportCNN.png  used on input line 350.
+Package pdftex.def Info: imgFolder/classificationReportCNN.png  used on input line 347.
 (pdftex.def)             Requested size: 284.52756pt x 199.19522pt.
-<imgFolder/CNN_fig.png, id=76, 578.16pt x 361.35pt>
+<imgFolder/CNN_fig.png, id=72, 578.16pt x 361.35pt>
 File: imgFolder/CNN_fig.png Graphic file (type png)
 <use imgFolder/CNN_fig.png>
-Package pdftex.def Info: imgFolder/CNN_fig.png  used on input line 357.
+Package pdftex.def Info: imgFolder/CNN_fig.png  used on input line 354.
 (pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
  [12 <./imgFolder/RunningCNNModel.png> <./imgFolder/CNNResult.png> <./imgFolder/classificationReportCNN.png>]
-<imgFolder/RunningSimpleNeuralNetwork.png, id=83, 549.05125pt x 273.02pt>
+<imgFolder/RunningSimpleNeuralNetwork.png, id=79, 549.05125pt x 273.02pt>
 File: imgFolder/RunningSimpleNeuralNetwork.png Graphic file (type png)
 <use imgFolder/RunningSimpleNeuralNetwork.png>
-Package pdftex.def Info: imgFolder/RunningSimpleNeuralNetwork.png  used on input line 370.
+Package pdftex.def Info: imgFolder/RunningSimpleNeuralNetwork.png  used on input line 366.
 (pdftex.def)             Requested size: 284.52756pt x 141.48796pt.
-<imgFolder/simpleNeuralNetworkResult.png, id=84, 154.07562pt x 21.58063pt>
+<imgFolder/simpleNeuralNetworkResult.png, id=80, 154.07562pt x 21.58063pt>
 File: imgFolder/simpleNeuralNetworkResult.png Graphic file (type png)
 <use imgFolder/simpleNeuralNetworkResult.png>
-Package pdftex.def Info: imgFolder/simpleNeuralNetworkResult.png  used on input line 377.
+Package pdftex.def Info: imgFolder/simpleNeuralNetworkResult.png  used on input line 373.
 (pdftex.def)             Requested size: 284.52756pt x 39.85532pt.
-<imgFolder/classificationReportSimpleNeuralNetwork.png, id=85, 224.84pt x 158.09062pt>
+<imgFolder/classificationReportSimpleNeuralNetwork.png, id=81, 224.84pt x 158.09062pt>
 File: imgFolder/classificationReportSimpleNeuralNetwork.png Graphic file (type png)
 <use imgFolder/classificationReportSimpleNeuralNetwork.png>
-Package pdftex.def Info: imgFolder/classificationReportSimpleNeuralNetwork.png  used on input line 384.
+Package pdftex.def Info: imgFolder/classificationReportSimpleNeuralNetwork.png  used on input line 380.
 (pdftex.def)             Requested size: 284.52756pt x 200.08052pt.
  [13 <./imgFolder/CNN_fig.png> <./imgFolder/RunningSimpleNeuralNetwork.png> <./imgFolder/simpleNeuralNetworkResult.png>]
-<imgFolder/SimpleNeuralNetwork_fig.png, id=93, 578.16pt x 361.35pt>
+<imgFolder/SimpleNeuralNetwork_fig.png, id=89, 578.16pt x 361.35pt>
 File: imgFolder/SimpleNeuralNetwork_fig.png Graphic file (type png)
 <use imgFolder/SimpleNeuralNetwork_fig.png>
-Package pdftex.def Info: imgFolder/SimpleNeuralNetwork_fig.png  used on input line 391.
+Package pdftex.def Info: imgFolder/SimpleNeuralNetwork_fig.png  used on input line 387.
 (pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
-<imgFolder/accurateFuncComparison.png, id=94, 578.16pt x 361.35pt>
-File: imgFolder/accurateFuncComparison.png Graphic file (type png)
-<use imgFolder/accurateFuncComparison.png>
-Package pdftex.def Info: imgFolder/accurateFuncComparison.png  used on input line 397.
-(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
-<imgFolder/lossFuncComparison.png, id=95, 578.16pt x 361.35pt>
-File: imgFolder/lossFuncComparison.png Graphic file (type png)
-<use imgFolder/lossFuncComparison.png>
-Package pdftex.def Info: imgFolder/lossFuncComparison.png  used on input line 402.
-(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
- [14 <./imgFolder/classificationReportSimpleNeuralNetwork.png> <./imgFolder/SimpleNeuralNetwork_fig.png>] [15 <./imgFolder/accurateFuncComparison.png> <./imgFolder/lossFuncComparison.png>] [16]
+ [14 <./imgFolder/classificationReportSimpleNeuralNetwork.png> <./imgFolder/SimpleNeuralNetwork_fig.png>] [15]
 File: imgFolder/softMax_fig.png Graphic file (type png)
 <use imgFolder/softMax_fig.png>
-Package pdftex.def Info: imgFolder/softMax_fig.png  used on input line 498.
+Package pdftex.def Info: imgFolder/softMax_fig.png  used on input line 478.
 (pdftex.def)             Requested size: 227.62204pt x 142.26025pt.
 File: imgFolder/softMaxResult.png Graphic file (type png)
 <use imgFolder/softMaxResult.png>
-Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 504.
+Package pdftex.def Info: imgFolder/softMaxResult.png  used on input line 484.
 (pdftex.def)             Requested size: 170.71652pt x 25.84785pt.
-<imgFolder/simpleNeuralNetwork_fig.png, id=110, 578.16pt x 361.35pt>
+<imgFolder/simpleNeuralNetwork_fig.png, id=99, 578.16pt x 361.35pt>
 File: imgFolder/simpleNeuralNetwork_fig.png Graphic file (type png)
 <use imgFolder/simpleNeuralNetwork_fig.png>
-Package pdftex.def Info: imgFolder/simpleNeuralNetwork_fig.png  used on input line 512.
+Package pdftex.def Info: imgFolder/simpleNeuralNetwork_fig.png  used on input line 491.
 (pdftex.def)             Requested size: 227.62204pt x 142.26025pt.
 File: imgFolder/simpleNeuralNetworkResult.png Graphic file (type png)
 <use imgFolder/simpleNeuralNetworkResult.png>
-Package pdftex.def Info: imgFolder/simpleNeuralNetworkResult.png  used on input line 518.
+Package pdftex.def Info: imgFolder/simpleNeuralNetworkResult.png  used on input line 497.
 (pdftex.def)             Requested size: 170.71652pt x 23.91325pt.
 File: imgFolder/CNN_fig.png Graphic file (type png)
 <use imgFolder/CNN_fig.png>
-Package pdftex.def Info: imgFolder/CNN_fig.png  used on input line 525.
+Package pdftex.def Info: imgFolder/CNN_fig.png  used on input line 503.
 (pdftex.def)             Requested size: 227.62204pt x 142.26025pt.
- [17 <./imgFolder/simpleNeuralNetwork_fig.png>]
+ [16 <./imgFolder/simpleNeuralNetwork_fig.png>]
 File: imgFolder/CNNResult.png Graphic file (type png)
 <use imgFolder/CNNResult.png>
-Package pdftex.def Info: imgFolder/CNNResult.png  used on input line 531.
+Package pdftex.def Info: imgFolder/CNNResult.png  used on input line 509.
 (pdftex.def)             Requested size: 170.71652pt x 24.98396pt.
- [18]
-<imgFolder/create_softmax_model.png, id=118, 327.2225pt x 84.315pt>
+<imgFolder/accurateFuncComparison.png, id=104, 578.16pt x 361.35pt>
+File: imgFolder/accurateFuncComparison.png Graphic file (type png)
+<use imgFolder/accurateFuncComparison.png>
+Package pdftex.def Info: imgFolder/accurateFuncComparison.png  used on input line 515.
+(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
+<imgFolder/lossFuncComparison.png, id=105, 578.16pt x 361.35pt>
+File: imgFolder/lossFuncComparison.png Graphic file (type png)
+<use imgFolder/lossFuncComparison.png>
+Package pdftex.def Info: imgFolder/lossFuncComparison.png  used on input line 520.
+(pdftex.def)             Requested size: 284.52756pt x 177.82945pt.
+ [17 <./imgFolder/accurateFuncComparison.png>] [18 <./imgFolder/lossFuncComparison.png>]
+<imgFolder/create_softmax_model.png, id=114, 327.2225pt x 84.315pt>
 File: imgFolder/create_softmax_model.png Graphic file (type png)
 <use imgFolder/create_softmax_model.png>
-Package pdftex.def Info: imgFolder/create_softmax_model.png  used on input line 542.
+Package pdftex.def Info: imgFolder/create_softmax_model.png  used on input line 532.
 (pdftex.def)             Requested size: 227.62204pt x 58.65083pt.
-<imgFolder/train_softmax_model.png, id=119, 287.57437pt x 248.93pt>
+<imgFolder/train_softmax_model.png, id=115, 287.57437pt x 248.93pt>
 File: imgFolder/train_softmax_model.png Graphic file (type png)
 <use imgFolder/train_softmax_model.png>
-Package pdftex.def Info: imgFolder/train_softmax_model.png  used on input line 548.
+Package pdftex.def Info: imgFolder/train_softmax_model.png  used on input line 538.
 (pdftex.def)             Requested size: 227.62204pt x 197.03996pt.
  [19 <./imgFolder/create_softmax_model.png> <./imgFolder/train_softmax_model.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 553--561
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 553--561
+Underfull \hbox (badness 10000) in paragraph at lines 543--551
 
  []
 
-<imgFolder/create-neural-network-code.png, id=126, 357.83687pt x 90.83937pt>
+<imgFolder/create-neural-network-code.png, id=122, 357.83687pt x 90.83937pt>
 File: imgFolder/create-neural-network-code.png Graphic file (type png)
 <use imgFolder/create-neural-network-code.png>
-Package pdftex.def Info: imgFolder/create-neural-network-code.png  used on input line 566.
+Package pdftex.def Info: imgFolder/create-neural-network-code.png  used on input line 556.
 (pdftex.def)             Requested size: 227.62204pt x 57.78354pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--567
+Underfull \hbox (badness 10000) in paragraph at lines 552--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 562--567
+Underfull \hbox (badness 10000) in paragraph at lines 552--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--579
+Underfull \hbox (badness 10000) in paragraph at lines 559--569
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--579
+Underfull \hbox (badness 10000) in paragraph at lines 559--569
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 569--579
+Underfull \hbox (badness 10000) in paragraph at lines 559--569
 
  []
 
-<imgFolder/train_neural_network-code.png, id=127, 430.60875pt x 286.06876pt>
+<imgFolder/train_neural_network-code.png, id=123, 430.60875pt x 286.06876pt>
 File: imgFolder/train_neural_network-code.png Graphic file (type png)
 <use imgFolder/train_neural_network-code.png>
-Package pdftex.def Info: imgFolder/train_neural_network-code.png  used on input line 585.
+Package pdftex.def Info: imgFolder/train_neural_network-code.png  used on input line 575.
 (pdftex.def)             Requested size: 227.62204pt x 151.21849pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--586
+Underfull \hbox (badness 10000) in paragraph at lines 570--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 580--586
+Underfull \hbox (badness 10000) in paragraph at lines 570--576
 
  []
 
 [20 <./imgFolder/create-neural-network-code.png>] [21 <./imgFolder/train_neural_network-code.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 596--598
+Underfull \hbox (badness 10000) in paragraph at lines 581--583
 
  []
 
-<imgFolder/create_cnn_model.png, id=136, 443.6575pt x 220.32312pt>
+<imgFolder/create_cnn_model.png, id=132, 443.6575pt x 220.32312pt>
 File: imgFolder/create_cnn_model.png Graphic file (type png)
 <use imgFolder/create_cnn_model.png>
-Package pdftex.def Info: imgFolder/create_cnn_model.png  used on input line 602.
+Package pdftex.def Info: imgFolder/create_cnn_model.png  used on input line 587.
 (pdftex.def)             Requested size: 227.62204pt x 113.03566pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 604--629
+Underfull \hbox (badness 10000) in paragraph at lines 589--614
 
  []
 
-<imgFolder/train_cnn_model.png, id=137, 455.20062pt x 370.38374pt>
+<imgFolder/train_cnn_model.png, id=133, 455.20062pt x 370.38374pt>
 File: imgFolder/train_cnn_model.png Graphic file (type png)
 <use imgFolder/train_cnn_model.png>
-Package pdftex.def Info: imgFolder/train_cnn_model.png  used on input line 640.
+Package pdftex.def Info: imgFolder/train_cnn_model.png  used on input line 625.
 (pdftex.def)             Requested size: 227.62204pt x 185.21402pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 630--641
+Underfull \hbox (badness 10000) in paragraph at lines 615--626
 
  []
 
@@ -728,17 +718,17 @@ L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6542 strings out of 474542
- 111646 string characters out of 5744447
- 1937978 words of memory out of 5000000
- 28676 multiletter control sequences out of 15000+600000
+ 6528 strings out of 474542
+ 111095 string characters out of 5744447
+ 1936978 words of memory out of 5000000
+ 28662 multiletter control sequences out of 15000+600000
  564645 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,93p,820b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,93p,730b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\moria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on document.pdf (23 pages, 661249 bytes).
+Output written on document.pdf (23 pages, 655664 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
+ 204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
