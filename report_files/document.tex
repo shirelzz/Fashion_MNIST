@@ -31,22 +31,17 @@ We compare the performance of the neural network approach with traditional machi
 The report discusses the project methodology, experimental results, and conclusions drawn from the comparison.
 
 \section{Introduction}
-This report explores the performance of various machine learning models for classifying fashion items from the well-known Fashion-MNIST dataset. This dataset consists of grayscale images of various clothing articles, each belonging to a specific category such as T-shirts, trousers, and shoes. The task of classifying these images is considered a classification problem.
-
+This report explores the performance of various machine learning models for classifying fashion items from the well-known Fashion-MNIST dataset. This dataset consists of grayscale images of various clothing articles, each belonging to a specific category such as T-shirts, trousers, and shoes. The task of classifying these images is considered a classification problem.\\
 The report delves into the implementation and evaluation of different models,
-including several models from sklearn, neural network from tensorflow and CNN.
-
-The models were evaluated based on their loss function, with the aim of achieving the lowest possible loss to indicate better performance in classifying the fashion items.
-
+including several models from sklearn, neural network from tensorflow and CNN.\\
+The models were evaluated based on their loss function, with the aim of achieving the lowest possible loss to indicate better performance in classifying the fashion items.\\
 The report compares and analyzes the results of each model, providing insights into their strengths and weaknesses for this specific classification task. It also discusses potential areas for further exploration and improvement.
 
 \section{Related Work and Required Background}
 \subsection{Softmax Regression}
 Softmax regression, also known as multinomial logistic regression, is a generalization of logistic regression.
 While in logistic regression we assumed that the labels were binary: ${y(i)\in{0,1}}$, In Softmax regression we are able to handle multiple labels ${y(i)\in{1,…,K}}$ where ${k}$ is the number of classes.\\
-
 In softmax regression, the goal is to predict the probability that an input sample belongs to each possible class. This is achieved by applying the softmax function to the output of a linear model. The linear model computes a score for each class based on the input features, and the softmax function converts these scores into probabilities.\\
-
 Mathematically, given an input vector ${x}$, softmax regression computes the probability ${P(y=i | x)}$ that the input belongs to class ${i}$ as follows:
 $${P(y=i | x) = \frac{e^{x^{T} \cdot W_i + b_i}}{\sum_{j=1}^{k} e^{x^{T} \cdot W_j + b_j}}
         }$$
@@ -135,8 +130,7 @@ Mathematically, forward propagation can be expressed as:
 where \( l \) denotes the layer index.
 \subsubsection{Backpropagation}
 
-Backpropagation is used to update the weights and biases of the network to minimize the loss function. Gradients are calculated and the parameters are adjusted using gradient descent.
-
+Backpropagation is used to update the weights and biases of the network to minimize the loss function. Gradients are calculated and the parameters are adjusted using gradient descent.\\
 The most important equations for backpropagation are the chain rule for calculating the gradients and the equations for updating the weights and biases:
 \begin{align*}
     \frac{\partial \mathcal{L}}{\partial z^{[l]}} & = \frac{\partial \mathcal{L}}{\partial a^{[l]}} \cdot \frac{\partial a^{[l]}}{\partial z^{[l]}} \\
@@ -213,14 +207,10 @@ It adaptively adjusts the learning rate for each parameter based on these estima
 \newpage
 \section{Previous Attempts}
 \subsection{First Attempts with different data}
-Model Selection and Evaluation:
-
-The project explored the performance of various models for predicting flight ticket prices in a dataset containing information on bookings between major Indian cities. The target variable was the "Price" column, indicating a continuous value. Therefore, the problem was classified as a regression task.
-
-The data was split into train and test sets for model evaluation. Several models were implemented and compared based on their performance in reducing the mean squared error (MSE), which served as the loss function.\\
-
+Model Selection and Evaluation:\\
+The project explored the performance of various models for predicting flight ticket prices in a dataset containing information on bookings between major Indian cities. The target variable was the "Price" column, indicating a continuous value. Therefore, the problem was classified as a regression task.\\
+The data was split into train and test sets for model evaluation. Several models were implemented and compared based on their performance in reducing the mean squared error (MSE), which served as the loss function.\\\newline
 \textbf{Model Performances:}\\
-
 
 \subsubsection{Dummy Model:}
 This baseline model adopted a simple mean strategy, resulting in high loss values.
@@ -276,89 +266,18 @@ This baseline model adopted a simple mean strategy, resulting in high loss value
 While the neural network achieved competitive results compared to simpler models after hyperparameter adjustments, the random forest remained the best performing model based on the achieved loss values.
 
 \subsection{Second Attempts with Fashion-MNIST data (our data)}
-\textbf{Model Selection and Evaluation:}
-
-The project explored the performance of various models for classification of a picture of cloth to a various category. Therefore, the problem was classified as a classification task.
-
-The data was split into train and test sets for model evaluation, in some models also to validation. Several models were implemented and compared based on their performance in reducing the loss function.\\
-\textbf{Approach:}
-
+\textbf{Model Selection and Evaluation:}\\
+The project explored the performance of various models for classification of a picture of cloth to a various category. Therefore, the problem was classified as a classification task.\\
+The data was split into train and test sets for model evaluation, in some models also to validation. Several models were implemented and compared based on their performance in reducing the loss function.\\\newline
+\textbf{Approach:}\\
 In this study, the waterfall approach is adopted, characterized by systematically running the model with predefined epochs and various parameters governing the model's architecture, such as the number of layers in the neural network and other relevant factors. This method aims to systematically explore the model's performance across different configurations and settings.\\
 \textbf{Model Performances:}\\
 
 \subsubsection{Soft max:}
-A function that turns a vector of K real values into a vector of K real values that sum to 1.
-
-In an effort to optimize the performance of the model's performance, various hyperparameters were explored.
-The number of epochs controlling the training iterations was adjusted.
-Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated.
-The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
-
-The accuracy calculation process.
-\begin{figure}[H]
-    \caption{Running the model:}
-    \centering
-    \includegraphics[width=15cm]{imgFolder/RunningSoftMax.png}
-\end{figure}
-The result of the run:
-\begin{figure}[H]
-    \caption{Result:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/softMaxResult.png}
-\end{figure}
-
-The classification report in concentrated form:
-\begin{figure}[H]
-    \caption{Classification Report:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/classificationReportSoftmax.png}
-\end{figure}
-
-All the data of the epochs can be shown in a graph that shows the loss function and the accuracy in every run.
-\begin{figure}[H]
-    \caption{Soft max training history:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/softMax_fig.png}
-\end{figure}
-\newpage
-
-\subsubsection{CNN:}
-A regularized type of feed-forward neural network that learns feature engineering by itself via filters (or kernel) optimization.
-In an effort to optimize the performance of the model's performance, various hyperparameters were explored.
-The number of epochs controlling the training iterations was adjusted. Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated.
-The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
-
-The accuracy calculation process:
-
-\begin{figure}[H]
-    \caption{Running the model:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/RunningCNNModel.png}
-\end{figure}
-
-The result of the run:
-\begin{figure}[H]
-    \caption{Result:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/CNNResult.png}
-\end{figure}
-
-The classification report in concentrated form:
-\begin{figure}[H]
-    \caption{Classification Report:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/classificationReportCNN.png}
-\end{figure}
-
-All the data of the epochs can be shown in a graph that shows the loss function and the accuracy in every run.
-\begin{figure}[H]
-    \caption{CNN training history:}
-    \centering
-    \includegraphics[width=10cm]{imgFolder/CNN_fig.png}
-\end{figure}
+In an attempt to optimize the performance of the model we tried different number of epochs, optimizers and loss functions. We were able to get from ${79\%}$ to ${85\%}$.\\
 
 \subsubsection{Simple Neural Network:}
-A group of interconnected units called neurons that send signals to one another. Neurons can be either biological cells or mathematical models. While individual neurons are simple, many of them together in a network can perform complex tasks.In an effort to optimize the performance of the model's performance, various hyperparameters were explored.
+A group of interconnected units called neurons that send signals to one another. Neurons can be either biological cells or mathematical models. While individual neurons are simple, many of them together in a network can perform complex tasks.In an effort to optimize the performance of the model, various hyperparameters were explored.
 The number of epochs controlling the training iterations was adjusted. Different optimizers responsible for updating the model weights were investigated. The split of data for training, validation and testing was also investigated.
 The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy.
 
@@ -390,6 +309,11 @@ All the data of the epochs can be shown in a graph that shows the loss function 
     \centering
     \includegraphics[width=10cm]{imgFolder/SimpleNeuralNetwork_fig.png}
 \end{figure}
+
+\subsubsection{CNN:}
+In an effort to optimize the performance of the model, various hyperparameters were explored such as normalization of the data, different size of the kernel, number of epochs, optimizers, loss functions, etc.
+The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy. We were able to reach from ${87\%}$ to $(91\%)$.\\
+
 \subsection{Comparing Between Models}
 \begin{figure}[H]
     \caption{Comparing accuracy score between models: }
