@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  3 MAR 2024 00:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  3 MAR 2024 00:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -551,12 +551,12 @@ Package pdftex.def Info: ../imgFolder/lossFuncComparison.png  used on input line
 File: ../imgFolder/create_softmax_model.png Graphic file (type png)
 <use ../imgFolder/create_softmax_model.png>
 Package pdftex.def Info: ../imgFolder/create_softmax_model.png  used on input line 415.
-(pdftex.def)             Requested size: 227.62204pt x 58.65083pt.
+(pdftex.def)             Requested size: 284.52756pt x 73.31355pt.
 <../imgFolder/train_softmax_model.png, id=89, 287.57437pt x 248.93pt>
 File: ../imgFolder/train_softmax_model.png Graphic file (type png)
 <use ../imgFolder/train_softmax_model.png>
 Package pdftex.def Info: ../imgFolder/train_softmax_model.png  used on input line 421.
-(pdftex.def)             Requested size: 227.62204pt x 197.03996pt.
+(pdftex.def)             Requested size: 284.52756pt x 246.3009pt.
  [15 <../imgFolder/create_softmax_model.png> <../imgFolder/train_softmax_model.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 426--429
 
@@ -571,7 +571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 426--429
 File: ../imgFolder/create-neural-network-code.png Graphic file (type png)
 <use ../imgFolder/create-neural-network-code.png>
 Package pdftex.def Info: ../imgFolder/create-neural-network-code.png  used on input line 434.
-(pdftex.def)             Requested size: 227.62204pt x 54.00256pt.
+(pdftex.def)             Requested size: 284.52756pt x 67.50513pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 430--435
 
@@ -601,7 +601,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 437--447
 File: ../imgFolder/train_neural_network-code.png Graphic file (type png)
 <use ../imgFolder/train_neural_network-code.png>
 Package pdftex.def Info: ../imgFolder/train_neural_network-code.png  used on input line 453.
-(pdftex.def)             Requested size: 227.62204pt x 158.48184pt.
+(pdftex.def)             Requested size: 284.52756pt x 198.11177pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 448--454
 
@@ -612,7 +612,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--454
 
  []
 
-[16 <../imgFolder/create-neural-network-code.png> <../imgFolder/train_neural_network-code.png>] [17]
+[16 <../imgFolder/create-neural-network-code.png>] [17 <../imgFolder/train_neural_network-code.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 459--461
 
  []
@@ -621,7 +621,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 459--461
 File: ../imgFolder/create_cnn_model.png Graphic file (type png)
 <use ../imgFolder/create_cnn_model.png>
 Package pdftex.def Info: ../imgFolder/create_cnn_model.png  used on input line 465.
-(pdftex.def)             Requested size: 227.62204pt x 113.03566pt.
+(pdftex.def)             Requested size: 284.52756pt x 141.29543pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 467--492
 
@@ -661,7 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--492
 File: ../imgFolder/train_cnn_model.png Graphic file (type png)
 <use ../imgFolder/train_cnn_model.png>
 Package pdftex.def Info: ../imgFolder/train_cnn_model.png  used on input line 503.
-(pdftex.def)             Requested size: 227.62204pt x 185.21402pt.
+(pdftex.def)             Requested size: 284.52756pt x 231.51752pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 493--504
 
@@ -672,18 +672,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 493--504
 File: ../imgFolder/mainPart1.png Graphic file (type png)
 <use ../imgFolder/mainPart1.png>
 Package pdftex.def Info: ../imgFolder/mainPart1.png  used on input line 512.
-(pdftex.def)             Requested size: 227.62204pt x 177.72032pt.
+(pdftex.def)             Requested size: 284.52756pt x 222.15907pt.
 <../imgFolder/mainPart2.png, id=112, 538.01pt x 407.5225pt>
 File: ../imgFolder/mainPart2.png Graphic file (type png)
 <use ../imgFolder/mainPart2.png>
 Package pdftex.def Info: ../imgFolder/mainPart2.png  used on input line 518.
-(pdftex.def)             Requested size: 227.62204pt x 172.41437pt.
+(pdftex.def)             Requested size: 284.52756pt x 215.51952pt.
  [19 <../imgFolder/train_cnn_model.png> <../imgFolder/mainPart1.png>]
 <../imgFolder/getData.png, id=119, 603.75563pt x 361.85187pt>
 File: ../imgFolder/getData.png Graphic file (type png)
 <use ../imgFolder/getData.png>
 Package pdftex.def Info: ../imgFolder/getData.png  used on input line 527.
-(pdftex.def)             Requested size: 227.62204pt x 136.41742pt.
+(pdftex.def)             Requested size: 284.52756pt x 170.52315pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 522--528
 
@@ -698,13 +698,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 522--528
 File: ../imgFolder/splitData0.png Graphic file (type png)
 <use ../imgFolder/splitData0.png>
 Package pdftex.def Info: ../imgFolder/splitData0.png  used on input line 540.
-(pdftex.def)             Requested size: 227.62204pt x 52.3944pt.
-<../imgFolder/splitData1.png, id=121, 465.23813pt x 126.4725pt>
+(pdftex.def)             Requested size: 284.52756pt x 65.493pt.
+[20 <../imgFolder/mainPart2.png> <../imgFolder/getData.png>]
+<../imgFolder/splitData1.png, id=126, 465.23813pt x 126.4725pt>
 File: ../imgFolder/splitData1.png Graphic file (type png)
 <use ../imgFolder/splitData1.png>
 Package pdftex.def Info: ../imgFolder/splitData1.png  used on input line 551.
-(pdftex.def)             Requested size: 227.62204pt x 61.8775pt.
-[20 <../imgFolder/mainPart2.png> <../imgFolder/getData.png> <../imgFolder/splitData0.png>] [21 <../imgFolder/splitData1.png>] (document.aux)
+(pdftex.def)             Requested size: 284.52756pt x 77.3488pt.
+ [21 <../imgFolder/splitData0.png> <../imgFolder/splitData1.png>] (document.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -719,7 +720,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,11n,93p,743b,265s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\moria\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/moria/AppData/Local/Programs/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on document.pdf (21 pages, 689087 bytes).
+Output written on document.pdf (21 pages, 689343 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

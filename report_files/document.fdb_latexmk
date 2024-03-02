@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1709418333.89837 "c:/projects/Flight_Price_Prediction/report_files/document.tex" "document.pdf" "document" 1709418336.87233 0
+["pdflatex"] 1709418911.57868 "c:/projects/Flight_Price_Prediction/report_files/document.tex" "document.pdf" "document" 1709418914.85337 0
   "../imgFolder/CNNResult.png" 1709416798 3381 0905f7c0f1b8ae2a35d151c170c8e543 ""
   "../imgFolder/CNN_fig.png" 1709416726 33557 0ebb10102dcf44e06bbdf93066a87eab ""
   "../imgFolder/accurateFuncComparison.png" 1709416757 22222 302402692d0e450e5645060db41965ab ""
@@ -109,10 +109,10 @@
   "C:/Users/moria/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/moria/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/moria/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "c:/projects/Flight_Price_Prediction/report_files/document.tex" 1709418330 34917 d3ecb684249a364f42e0fb665914c370 ""
-  "document.aux" 1709418336 8096 374cc45d0df8fcb9f2ac784fa3e7599e "pdflatex"
-  "document.tex" 1709418330 34917 d3ecb684249a364f42e0fb665914c370 ""
-  "document.toc" 1709418336 3128 1c2e103e3c1ccc06386947a05660e646 "pdflatex"
+  "c:/projects/Flight_Price_Prediction/report_files/document.tex" 1709418908 34928 da9288a5e9414b1ef9214100f2d9206a ""
+  "document.aux" 1709418914 8096 0188a00dc7250d62c0fc38ff1d22d235 "pdflatex"
+  "document.tex" 1709418908 34928 da9288a5e9414b1ef9214100f2d9206a ""
+  "document.toc" 1709418914 3128 1c2e103e3c1ccc06386947a05660e646 "pdflatex"
   (generated)
   "document.aux"
   "document.log"
