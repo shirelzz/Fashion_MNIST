@@ -1,7 +1,7 @@
 from modelUtils import *
 from fashionMNIST import *
 from softMax import *
-from fashion_mnist.SimpleNeuralNetwork import *
+from SimpleNeuralNetwork import *
 from CNN import *
 
 
@@ -32,7 +32,7 @@ def main():
     
     # Perform training for Neural network model
     print("Neural network model:")
-    neural_network_model = train_neural_network(X_train0, y_train0, X_test0, y_test0, X_validation0, y_validation0, num_classes)
+    neural_network_model = train_neural_network(X_train0, y_train0, X_validation0, y_validation0, num_classes)
     (loss, accuracy) = evaluate_model(neural_network_model, X_test0.values.reshape(-1, 28, 28, 1), y_test0)
     loss_array.append(loss)
     model_array.append("Neural network model")
@@ -45,8 +45,6 @@ def main():
     loss_array.append(loss)
     model_array.append("CNN model")
     accuracy_array.append(accuracy)
-
-    
     
     plt.figure(figsize=(8, 5))
     plt.bar(np.array(model_array), np.array(loss_array), color=['blue', 'orange', 'green'])

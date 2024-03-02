@@ -1,17 +1,11 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-# import matplotlib.pyplot as plt
 import importlib
 import pandas as pd
 import numpy as np
-from sklearn.calibration import CalibratedClassifierCV
 import utils
-from sklearn.linear_model import SGDClassifier, LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-# from tensorflow import keras
 
 import tensorflow as tf
-# from tensorflow.keras import layers, models
 layers, models = tf.keras.layers, tf.keras.models
 
 importlib.reload(utils)
@@ -23,7 +17,6 @@ def get_data():
     fashion_mnist = tf.keras.datasets.fashion_mnist
 
     (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
-    # print(train_images)
     # Combine train and test images and labels
     images = np.concatenate((train_images, test_images))
     labels = np.concatenate((train_labels, test_labels))
@@ -58,8 +51,6 @@ def split_data1(df_shuffled):
     # To transform the images to be in scale from 0-1
     X_train = X_train / 255.0
     X_test = X_test / 255.0
-    # X_validation = X_validation / 255.0
-    # , X_validation, y_validation)
 
     return X_train, y_train, X_test, y_test
 
