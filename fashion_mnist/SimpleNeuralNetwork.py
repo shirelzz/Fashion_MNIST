@@ -9,13 +9,12 @@ def create_neural_network(num_classes): # create_neural_network = 10
     model_input = layers.Input(shape=[28 ,28])
     x = layers.Flatten()(model_input)  # Flatten input
     x = layers.Dense(300, activation="relu")(x)  # 1st hidden layer
-    # x = layers.Dense(128, activation="relu")(x)   # 2nd hidden layer
     model_output = layers.Dense(num_classes, activation="softmax")(x)  # Output layer
 
     model = models.Model(inputs=model_input, outputs=model_output)
     return model
 
-def train_neural_network(X_train, y_train, X_test, y_test, x_validation, y_validation, num_classes):
+def train_neural_network(X_train, y_train, x_validation, y_validation, num_classes):
     model = create_neural_network(num_classes)  # grayscale image of size 28x28 pixels with one channel.
     
     model.compile(optimizer='adam',
@@ -27,7 +26,7 @@ def train_neural_network(X_train, y_train, X_test, y_test, x_validation, y_valid
     
     early_stopping = callbacks.EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
     
-    epochs=10
+    epochs=30
     model_history = model.fit(X_train_shaped, 
                               y_train,
                               epochs=epochs,
