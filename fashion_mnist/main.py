@@ -12,7 +12,8 @@ def main():
     X_train1, y_train1, X_test1, y_test1 = split_data1(df_shuffled)
 
     # For RNN
-    X_train0, y_train0, X_test0, y_test0, X_validation0, y_validation0 = split_data0(df_shuffled)
+    X_train0, y_train0, X_test0, y_test0, X_validation0, y_validation0 = \
+        split_data0(df_shuffled)
 
     # Number of unique classes
     num_classes = len(np.unique(y_train1))

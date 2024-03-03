@@ -261,7 +261,7 @@ In this study, the waterfall approach is adopted, characterized by systematicall
 In an attempt to optimize the performance of the model we tried different number of epochs, optimizers and loss functions. We were able to get better accuracy, from ${79\%}$ we reached ${85\%}$).\\
 
 \subsubsection{Simple Neural Network:}
-In an effort to optimize the performance of the model, various hyperparameters were explored such as normalization of the data, different size of the kernel, number of epochs, optimizers, loss functions, etc.
+In an effort to optimize the performance of the model, various hyperparameters were explored such as, different size of the kernel, numbers of layers, number of epochs, optimizers, loss functions, etc.
 The aim of this approach was to achieve the best possible result with the smallest loss function and the highest accuracy. We were able to reach from accuracy of ${87\%}$ to $(89\%)$ and loss function from ${36\%}$ to ${31\%}$.\\
 
 \subsubsection{CNN:}
@@ -423,7 +423,7 @@ softMax.py implements softmax regression, a technique for multi-class classifica
 \subsection{Simple Neural Network Model}
 SimpleNeuralNetwork.py code implements a Simple Neural Network using TensorFlow's Keras API for image classification tasks.
 It consists of two functions: create-neural-network and train-neural-network.
-The former, constructs a simple neural network model with multiple dense layers, along with batch normalization and dropout for regularization. The latter function prepares the training and test datasets, compiles and trains the simple neural network model, and visualizes the training history, showcasing metrics evolution over epochs (figure 9). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
+The former, constructs a simple neural network model with a dense layer. The latter function prepares the training and test datasets, compiles and trains the simple neural network model, and visualizes the training history, showcasing metrics evolution over epochs (figure 9). Early stopping is used to prevent overfitting by halting training if validation loss does not improve for three consecutive epochs.\\\newline
 
 \code{create-neural-network:}\\\newline
 \begin{figure}[H]
@@ -434,10 +434,8 @@ The former, constructs a simple neural network model with multiple dense layers,
 
 Flatten Layer: This layer flattens the 2D feature maps into a 1D vector,
 preparing the data for input into a fully connected neural network.\\\newline
-Dense Layers: Fully connected layers that perform classification based on the learned features.
-The first dense layer has 300 units with relu activation, enabling the network to learn complex
-patterns in the flattened feature vectors.
-The second dense layer has 128 units with relu activation, enabling the network to learn complex
+Dense Layer: Fully connected layers that perform classification based on the learned features.
+The first dense layer (hidden layer) has 300 units with relu activation, enabling the network to learn complex
 patterns in the flattened feature vectors.
 The final dense layer has units equal to the number of classes
 in the dataset, with softmax activation, which outputs probabilities for each class,
@@ -555,4 +553,307 @@ In this study, various machine learning models were evaluated for classifying fa
 Comparison of traditional algorithms like Logistic Regression and Multi-Layer Perceptron with advanced techniques such as Softmax Regression, Convolutional Neural Networks (CNNs), and Simple Neural Networks revealed that the CNN architecture consistently outperformed others in accuracy and loss reduction.
 Through systematic exploration of hyperparameters, the optimized CNN model demonstrated superior performance, highlighting the efficacy of deep learning techniques for image classification tasks.
 These findings contribute valuable insights for applications in e-commerce, retail, and computer vision domains.
+
+\newpage
+\section{Code Appendix}
+\subsection{Figure 14: Creation of the Softmax model}
+\begin{lstlisting}[language=Python]
+
+    def create_softmax_model(input_shape, num_classes):    
+        model = models.Sequential([
+            layers.Dense(num_classes, activation='softmax', input_shape=input_shape)
+        ])
+    
+        return model
+        
+    \end{lstlisting}
+\subsection{Figure 15: Training of the Softmax model}
+\begin{lstlisting}[language=Python]
+
+    def train_softmax_model(X_train, y_train, X_test, y_test, num_classes):
+    
+        input_shape = X_train.shape[1:]
+    
+        # Create the model
+        model = create_softmax_model(input_shape, num_classes)
+    
+        # Compile the model
+        model.compile(optimizer='adam',
+                      loss='sparse_categorical_crossentropy',
+                      metrics=['accuracy'])
+        epochs = 20
+    
+        # Train the model
+        model_history = model.fit(X_train, y_train, epochs=epochs,
+                                  batch_size=32,
+                                  validation_data=(X_test, y_test))
+    
+        # Display the training history
+        pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+        plt.title('Softmax Training History, epochs: ' + str(epochs))
+        plt.savefig("imgFolder/softMax_fig")
+        plt.show()
+    
+        return model
+    \end{lstlisting}
+
+\subsection{Figure 16: Creation of simple neural network model}
+\begin{lstlisting}[language=Python]
+    
+    def create_neural_network(num_classes): # create_neural_network = 10
+        model_input = layers.Input(shape=[28 ,28])
+        x = layers.Flatten()(model_input)  # Flatten input
+        x = layers.Dense(300, activation="relu")(x)  # 1st hidden layer
+        model_output = layers.Dense(num_classes, activation="softmax")(x)  # Output layer
+
+        model = models.Model(inputs=model_input, outputs=model_output)
+        return model
+\end{lstlisting}
+
+\subsection{Figure 17: Creation of simple neural network model}
+\begin{lstlisting}[language=Python]
+    
+    def train_neural_network(X_train, y_train, x_validation, y_validation, num_classes):
+        # grayscale image of size 28x28 pixels with one channel.
+        model = create_neural_network(num_classes)  
+        
+        model.compile(optimizer='adam',
+                    loss='sparse_categorical_crossentropy',
+                    metrics=['accuracy'])
+        print(model.summary())
+        X_train_shaped = X_train.values.reshape(-1, 28, 28)
+        X_validation_shaped = x_validation.values.reshape(-1, 28, 28)
+        
+        early_stopping = callbacks.EarlyStopping(monitor='val_loss',
+         patience=3, restore_best_weights=True)
+        
+        epochs=30
+        model_history = model.fit(X_train_shaped, 
+                                y_train,
+                                epochs=epochs,
+                                validation_data=(X_validation_shaped, y_validation),
+                                callbacks=[early_stopping])
+
+        stop = early_stopping.stopped_epoch
+        if stop == 0:
+            stop = epochs
+        pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+        plt.title('Simple Neural Network Training History \n epoch: ' + str(stop))
+        plt.gca().set_ylim(0, 1)
+        plt.savefig("imgFolder/simpleNeuralNetwork_fig")
+        plt.show()
+
+        return model
+\end{lstlisting}
+
+\subsection{Figure 18: Creation of the CNN model}
+\begin{lstlisting}[language=Python]
+    
+    def create_cnn_model(input_shape, num_classes):
+        activation = 'relu'
+        dropout_rate = 0.3
+
+        model = models.Sequential([
+            layers.Conv2D(32, (3, 3), activation=activation, input_shape=input_shape),  # 32 filters of size 3x3
+            BatchNormalization(),
+            layers.MaxPooling2D((2, 2)),
+            layers.Conv2D(64, (3, 3), activation=activation),
+            BatchNormalization(),
+            layers.MaxPooling2D((2, 2)),
+            layers.Conv2D(64, (3, 3), activation=activation),
+            BatchNormalization(),
+            layers.Flatten(),
+            layers.Dense(64, activation=activation),
+            Dropout(dropout_rate),
+            layers.Dense(num_classes, activation='softmax')
+        ])
+
+        return model
+\end{lstlisting}
+
+\subsection{Figure 19: Training of the CNN model}
+\begin{lstlisting}[language=Python]
+    
+    def train_cnn_model(X_train, y_train, X_test, y_test, num_classes):
+        # Reshape the input data for CNN
+        X_train = np.array(X_train).reshape(-1, 28, 28, 1)
+        X_test = np.array(X_test).reshape(-1, 28, 28, 1)
+
+        # Create the model
+        # grayscale image of size 28x28 pixels with one channel.
+        model = create_cnn_model((28, 28, 1), num_classes)  
+
+        # Compile the model
+        model.compile(optimizer='adam',
+                    loss='sparse_categorical_crossentropy',
+                    metrics=['accuracy'])
+
+        # Apply early stopping
+        early_stopping = EarlyStopping(monitor='val_loss',
+         patience=3, restore_best_weights=True)
+
+        # Train the model
+        epochs = 20
+        model_history = model.fit(X_train, y_train,
+                                epochs=epochs,
+                                batch_size=32,
+                                validation_data=(X_test, y_test),
+                                callbacks=[early_stopping])
+
+        # Get the epoch where the fit stopped in
+        stop = early_stopping.stopped_epoch
+        if stop == 0:
+            stop = epochs
+
+        # Display the training history
+        pd.DataFrame(model_history.history).plot(figsize=(8, 5))
+        plt.title('CNN Training History \n epoch: ' + str(stop))
+        plt.savefig("imgFolder/CNN_fig")
+        plt.show()
+
+        return model
+\end{lstlisting}
+
+\subsection{Figure 20+21: Main function part 1+2}
+\begin{lstlisting}[language=Python]
+
+def main():
+    df_shuffled = get_data()
+
+    # For SoftMax, CNN
+    X_train1, y_train1, X_test1, y_test1 = split_data1(df_shuffled)
+
+    # For RNN
+    X_train0, y_train0, X_test0, y_test0, X_validation0, y_validation0 = \
+        split_data0(df_shuffled)
+    # Number of unique classes
+    num_classes = len(np.unique(y_train1))
+
+    # For showcasing the results of all models
+    loss_array = []
+    model_array = []
+    accuracy_array = []
+
+    # Perform training for softmax model
+    print("SoftMax model:")
+    softmax_model = train_softmax_model(X_train1, y_train1, X_test1, y_test1, num_classes)
+    (loss, accuracy) = evaluate_model(softmax_model, X_test1, y_test1)
+    loss_array.append(loss)
+    model_array.append("SoftMax model")
+    accuracy_array.append(accuracy)
+    
+    # Perform training for Neural network model
+    print("Neural network model:")
+    neural_network_model = train_neural_network(X_train0, \
+        y_train0, X_validation0, y_validation0, num_classes)
+    (loss, accuracy) = evaluate_model(neural_network_model, \
+        X_test0.values.reshape(-1, 28, 28, 1), y_test0)
+    loss_array.append(loss)
+    model_array.append("Neural network model")
+    accuracy_array.append(accuracy)
+            
+    # Perform training for CNN model
+    print("CNN model:")
+    cnn_model = train_cnn_model(X_train1, y_train1, \
+        X_test1, y_test1, num_classes)
+    (loss, accuracy) = evaluate_model(cnn_model, \
+        X_test1.values.reshape(-1, 28, 28, 1), y_test1)
+    loss_array.append(loss)
+    model_array.append("CNN model")
+    accuracy_array.append(accuracy)
+    
+    plt.figure(figsize=(8, 5))
+    plt.bar(np.array(model_array), np.array(loss_array), \
+        color=['blue', 'orange', 'green'])
+    plt.xlabel('Models')
+    plt.ylabel('Loss function')
+    plt.title('Comparison of loss function error among Models')
+    plt.savefig("imgFolder/lossFuncComparison")
+    plt.show()
+    
+    plt.figure(figsize=(8, 5))
+    plt.bar(np.array(model_array), np.array(accuracy_array), \
+        color=['blue', 'orange', 'green'])
+    plt.xlabel('Models')
+    plt.ylabel('Accuracy score')
+    plt.title('Comparison of accuracy score among Models')
+    plt.savefig("imgFolder/accurateFuncComparison")
+    plt.show()
+
+main()
+
+\end{lstlisting}
+\subsection{Figure 22: Get data function}
+\begin{lstlisting}[language=Python]
+    
+from __future__ import absolute_import, division, print_function, unicode_literals
+import importlib
+import pandas as pd
+import numpy as np
+import utils
+from sklearn.model_selection import train_test_split
+
+import tensorflow as tf
+layers, models = tf.keras.layers, tf.keras.models
+
+importlib.reload(utils)
+
+class_names = ['T-shirt/top', 'Trouser', 'Pullover', 
+'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag',
+    'Ankle boot']
+
+
+def get_data():
+    fashion_mnist = tf.keras.datasets.fashion_mnist
+
+    (train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+    # Combine train and test images and labels
+    images = np.concatenate((train_images, test_images))
+    labels = np.concatenate((train_labels, test_labels))
+    # Flatten images to 1D arrays
+    images = images.reshape(-1, 28 * 28)
+    # Convert images and labels to DataFrame
+    data = {'image_' + str(i): images[:, i] for i in range(images.shape[1])}
+    data['label'] = labels
+    df = pd.DataFrame(data)
+    df_shuffled = df.sample(frac=1).reset_index(drop=True)
+    return df_shuffled
+\end{lstlisting}
+
+\subsection{Figure 23: Split data with validation}
+\begin{lstlisting}[language=Python]
+    
+def split_data0(df_shuffled):
+    X = df_shuffled.drop('label', axis=1)
+    y = df_shuffled['label']
+    X_train_, X_test, y_train_, y_test = train_test_split(X, y, \
+        test_size=0.1, random_state=42)
+    X_train, X_validation, y_train, y_validation = train_test_split(X_train_, y_train_,\
+        test_size=0.1, random_state=42)
+
+    # To transform the images to be in scale from 0-1
+    X_train = X_train / 255.0
+    X_test = X_test / 255.0
+    X_validation = X_validation / 255.0
+    return X_train, y_train, X_test, y_test, X_validation, y_validation
+
+\end{lstlisting}
+
+\subsection{Figure 24: Split data without validation}
+\begin{lstlisting}[language=Python]
+    
+def split_data1(df_shuffled):
+    X = df_shuffled.drop('label', axis=1)
+    y = df_shuffled['label']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15, \
+        random_state=42)
+
+    # To transform the images to be in scale from 0-1
+    X_train = X_train / 255.0
+    X_test = X_test / 255.0
+
+    return X_train, y_train, X_test, y_test
+
+\end{lstlisting}
+
 \end{document}
